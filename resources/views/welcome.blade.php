@@ -148,7 +148,7 @@
         <p><i class="fa fa-map-marker-alt"></i> Jl Pemuda, Pangkep, Sulawesi Selatan</p>
         <p><i class="fa fa-phone-alt"></i> +62 81340120468</p>
         <div class="footer-icons">
-            <a href="https://wa.me/6282352353646" target="_blank">
+            <a href="https://wa.me/6281340120468" target="_blank">
             <img src="whatsapp-icon.png" alt="WhatsApp" />
             </a>
             <a href="https://instagram.com/" target="_blank">
