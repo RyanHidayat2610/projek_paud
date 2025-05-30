@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PAUD AL ATHIRAH</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
 
@@ -59,16 +59,16 @@
         <h2>Kegiatan Unggulan Kami</h2>
         <div class="kegiatan-gallery">
             <div class="kegiatan-item">
-                <img src="kegiatan1.jpg" alt="Kegiatan 1">
+                <img src="{{ asset('images/Kegiatan.1.jpg') }}" alt="Kegiatan 1">
             </div>
             <div class="kegiatan-item">
-                <img src="kegiatan2.jpg" alt="Kegiatan 2">
+                <img src="{{ asset('images/Kegiatan.2.jpg') }}" alt="Kegiatan 2">
             </div>
             <div class="kegiatan-item">
-                <img src="kegiatan3.jpg" alt="Kegiatan 3">
+                <img src="{{ asset('images/Kegiatan.3.jpg') }}" alt="Kegiatan 3">
             </div>
             <div class="kegiatan-item">
-                <img src="kegiatan4.jpg" alt="Kegiatan 4">
+                <img src="{{ asset('images/Kegiatan.4.jpg') }}" alt="Kegiatan 4">
             </div>
         </div>
         <div class="kegiatan-button">
