@@ -17,12 +17,12 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="home.php">Home</a></li>
-                    <li><a href="fasilitas.php">Fasilitas</a></li>
-                    <li><a href="program.php">Program</a></li>
-                    <li><a href="pendaftaran.php">Pendaftaran</a></li>
-                    <li><a href="tentang.php">Tentang Kami</a></li>
-                    <li><a href="artikel.php">Artikel</a></li>
+                    <li><a href="home.blade.php">Home</a></li>
+                    <li><a href="fasilitas.blade.php">Fasilitas</a></li>
+                    <li><a href="program.blade.php">Program</a></li>
+                    <li><a href="pendaftaran.blade.php">Pendaftaran</a></li>
+                    <li><a href="about.blade.php">Tentang Kami</a></li>
+                    <li><a href="artikel.blade.php">Artikel</a></li>
                 </ul>
             </nav>
         </div>
