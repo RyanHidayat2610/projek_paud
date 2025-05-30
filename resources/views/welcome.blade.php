@@ -31,7 +31,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="overlay"></div>
-        <img src="bg-paud.jpg" alt="Background" class="bg-img">
+        <img src="{{ asset('images/bg-paud.jpg') }}" alt="Background" class="bg-img">
         <div class="hero-content">
             <div class="hero-text">
                 <h3>PAUD AL ATHIRAH</h3>
@@ -45,7 +45,7 @@
     <section class="tentang-kami">
         <div class="tentang-container">
             <div class="tentang-img">
-                <img src="tentang-kami.jpg" alt="Tentang PAUD Khairani">
+                <img src="{{ asset('images/tentang-kami.jpg') }}" alt="Tentang PAUD Khairani">
             </div>
             <div class="tentang-text">
                 <h2>Tentang PAUD AL ATHIRAH</h2>
