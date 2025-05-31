@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
 
@@ -17,12 +17,11 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="home.php">Home</a></li>
-                    <li><a href="fasilitas.php">Fasilitas</a></li>
-                    <li><a href="program.php">Program</a></li>
-                    <li><a href="pendaftaran.php">Pendaftaran</a></li>
-                    <li><a href="tentang.php">Tentang Kami</a></li>
-                    <li><a href="artikel.php">Artikel</a></li>
+                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/fasilitas') }}">Fasilitas</a></li>
+                    <li><a href="{{ url('/pendaftaran') }}">Pendaftaran</a></li>
+                    <li><a href="{{ url('/about') }}">Tentang Kami</a></li>
+                    <li><a href="{{ url('/artikel') }}">Artikel</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,48 +30,37 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="overlay"></div>
-        <img src="bg-paud.jpg" alt="Background" class="bg-img">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h3>PAUD AL ATHIRAH</h3>
-                <h1>Tempat anak belajar<br> dan bertumbuh</h1>
-                <p>Segera daftarkan anak Anda!</p>
-                <a href="#" class="btn-daftar">Daftar</a>
-            </div>
-        </div>
+        <img src="{{ asset('images/bg-paud.jpg') }}" alt="Background" class="bg-img">
     </section>
     <!-- Tentang Kami Section -->
     <section class="tentang-kami">
         <div class="tentang-container">
             <div class="tentang-img">
-                <img src="tentang-kami.jpg" alt="Tentang PAUD Khairani">
+                <img src="{{ asset('images/Tentang-kami.jpg') }}" alt="Tentang PAUD Khairani">
             </div>
             <div class="tentang-text">
                 <h2>Tentang PAUD AL ATHIRAH</h2>
                 <p><strong>PAUD AL ATHIRAH</strong> adalah fasilitas pendidikan anak usia dini yang berkomitmen untuk memberikan lingkungan belajar yang aman, nyaman, dan menyenangkan bagi anak-anak. Kami percaya bahwa setiap anak adalah individu yang istimewa dengan potensi yang sangat besar yang perlu dikembangkan melalui pendidikan yang menyeluruh dan holistik.</p>
-                <a href="#" class="btn-learn">Pelajari Lebih Lanjut</a>
+
             </div>
         </div>
     </section>
     <!-- Kegiatan Unggulan Kami -->
     <section class="kegiatan">
-        <h2>Kegiatan Unggulan Kami</h2>
+        <h2>Kegiatan Kami</h2>
         <div class="kegiatan-gallery">
             <div class="kegiatan-item">
-                <img src="kegiatan1.jpg" alt="Kegiatan 1">
+                <img src="{{ asset('images/Kegiatan.1.jpg') }}" alt="Kegiatan 1">
             </div>
             <div class="kegiatan-item">
-                <img src="kegiatan2.jpg" alt="Kegiatan 2">
+                <img src="{{ asset('images/Kegiatan.2.jpg') }}" alt="Kegiatan 2">
             </div>
             <div class="kegiatan-item">
-                <img src="kegiatan3.jpg" alt="Kegiatan 3">
+                <img src="{{ asset('images/Kegiatan.3.jpg') }}" alt="Kegiatan 3">
             </div>
             <div class="kegiatan-item">
-                <img src="kegiatan4.jpg" alt="Kegiatan 4">
+                <img src="{{ asset('images/Kegiatan.4.jpg') }}" alt="Kegiatan 4">
             </div>
-        </div>
-        <div class="kegiatan-button">
-            <a href="#" class="btn-lihat">Lihat Lebih Lanjut</a>
         </div>
     </section>
     <!-- Program PAUD Khairani -->
@@ -98,7 +86,6 @@
                 </div>
             </div>
         </div>
-        <a href="#" class="btn-program">Lihat Selengkapnya</a>
     </section>
     <!-- Lokasi Kami -->
     <section class="lokasi">
@@ -148,7 +135,7 @@
         <p><i class="fa fa-map-marker-alt"></i> Jl Pemuda, Pangkep, Sulawesi Selatan</p>
         <p><i class="fa fa-phone-alt"></i> +62 81340120468</p>
         <div class="footer-icons">
-            <a href="https://wa.me/6282352353646" target="_blank">
+            <a href="https://wa.me/6281340120468" target="_blank">
             <img src="whatsapp-icon.png" alt="WhatsApp" />
             </a>
             <a href="https://instagram.com/" target="_blank">
