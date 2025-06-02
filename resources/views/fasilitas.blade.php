@@ -39,7 +39,7 @@
             </div>
             <div class="tentang-text">
                 <h2>Tentang PAUD AL ATHIRAH</h2>
-                <p><strong>PAUD AL ATHIRAH</strong> adalah fasilitas pendidikan anak usia dini yang berkomitmen untuk memberikan lingkungan belajar yang aman, nyaman, dan menyenangkan bagi anak-anak. Kami percaya bahwa setiap anak adalah individu yang istimewa dengan potensi yang sangat besar yang perlu dikembangkan melalui pendidikan yang menyeluruh dan holistik.</p>
+                <p><strong>PAUD AL ATHIRAH</strong> adalah lembaga pendidikan anak usia dini yang berkomitmen menciptakan lingkungan belajar yang aman, nyaman, dan menyenangkan. Kami meyakini bahwa setiap anak adalah individu istimewa dengan potensi besar yang perlu dikembangkan melalui pendidikan holistik. Dengan metode belajar sambil bermain dan nilai-nilai Islami, kami membentuk karakter anak sejak dini melalui kegiatan seperti belajar, mengaji, dan sholat berjamaah. Didukung oleh pendidik profesional, fasilitas lengkap, serta dukungan orang tua, kami siap menjadi rumah kedua bagi anak menuju masa depan yang cerah.</p>
 
             </div>
         </div>
@@ -49,10 +49,10 @@
         <h2>Fasilitas PAUD Al-Athirah</h2>
         <div class="kegiatan-gallery">
             <div class="kegiatan-item">
-                <img src="{{ asset('images/Kegiatan.1.jpg') }}" alt="Kegiatan 1">
+                <img src="{{ asset('images/fasil.jpg') }}" alt="Kegiatan 1">
             </div>
             <div class="kegiatan-item">
-                <img src="{{ asset('images/Kegiatan.2.jpg') }}" alt="Kegiatan 2">
+                <img src="{{ asset('images/fasilitas.jpg') }}" alt="Kegiatan 2">
             </div>
             <div class="kegiatan-item">
                 <img src="{{ asset('images/Kegiatan.3.jpg') }}" alt="Kegiatan 3">
@@ -85,6 +85,27 @@
                     <img src="{{ asset('images/sholat.jpg') }}" alt="Sholat Bersama" class="hover-img">
                     <h3>Sholat Bersama</h3>
                     <p>Anak-anak PAUD kami melakukan Sholat secara berjamaah.</p>
+                </div>
+            </div>
+            <div class="program-card">
+                <div class="program-shape shape-4">
+                    <img src="{{ asset('images/periksa.jpg') }}" alt="Periksa Kesehatan" class="hover-img">
+                    <h3>Pemeriksaan Kesehatan</h3>
+                    <p>Dilakukan pemeriksaan gigi terhadap anak-anak PAUD kami.</p>
+                </div>
+            </div>
+            <div class="program-card">
+                <div class="program-shape shape-5">
+                    <img src="{{ asset('images/diskusi.jpg') }}" alt="Diskusi Bersama" class="hover-img">
+                    <h3>Diskusi Bersama</h3>
+                    <p>Anak-anak PAUD kami melakukan diskusi terkait pembelajaran.</p>
+                </div>
+            </div>
+            <div class="program-card">
+                <div class="program-shape shape-5">
+                    <img src="{{ asset('images/seni.jpg') }}" alt="Kesenian" class="hover-img">
+                    <h3>Kesenian</h3>
+                    <p>Anak-anak PAUD kami menunjukkan baju adat dan budaya.</p>
                 </div>
             </div>
         </div>

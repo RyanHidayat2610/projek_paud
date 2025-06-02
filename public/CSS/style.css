@@ -298,7 +298,7 @@ nav ul li a:hover {
 
 .program-card {
     width: 400px;
-    height: 250;
+    height: absolute;
     border-radius: 15px;
     overflow: hidden;
     position: relative;

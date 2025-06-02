@@ -39,7 +39,7 @@
             </div>
             <div class="tentang-text">
                 <h2>Tentang PAUD AL ATHIRAH</h2>
-                <p><strong>PAUD AL ATHIRAH</strong> adalah fasilitas pendidikan anak usia dini yang berkomitmen untuk memberikan lingkungan belajar yang aman, nyaman, dan menyenangkan bagi anak-anak. Kami percaya bahwa setiap anak adalah individu yang istimewa dengan potensi yang sangat besar yang perlu dikembangkan melalui pendidikan yang menyeluruh dan holistik.</p>
+                <p><strong>PAUD AL ATHIRAH</strong> adalah lembaga pendidikan anak usia dini yang berkomitmen menciptakan lingkungan belajar yang aman, nyaman, dan menyenangkan. Kami meyakini bahwa setiap anak adalah individu istimewa dengan potensi besar yang perlu dikembangkan melalui pendidikan holistik. Dengan metode belajar sambil bermain dan nilai-nilai Islami, kami membentuk karakter anak sejak dini melalui kegiatan seperti belajar, mengaji, dan sholat berjamaah. Didukung oleh pendidik profesional, fasilitas lengkap, serta dukungan orang tua, kami siap menjadi rumah kedua bagi anak menuju masa depan yang cerah.</p>
 
             </div>
         </div>
@@ -111,6 +111,27 @@
                     <p>Anak-anak PAUD kami melakukan Sholat secara berjamaah.</p>
                 </div>
             </div>
+            <div class="program-card">
+                <div class="program-shape shape-4">
+                    <img src="{{ asset('images/periksa.jpg') }}" alt="Periksa Kesehatan" class="hover-img">
+                    <h3>Pemeriksaan Kesehatan</h3>
+                    <p>Dilakukan pemeriksaan gigi terhadap anak-anak PAUD kami.</p>
+                </div>
+            </div>
+            <div class="program-card">
+                <div class="program-shape shape-5">
+                    <img src="{{ asset('images/diskusi.jpg') }}" alt="Diskusi Bersama" class="hover-img">
+                    <h3>Diskusi Bersama</h3>
+                    <p>Anak-anak PAUD kami melakukan diskusi terkait pembelajaran.</p>
+                </div>
+            </div>
+            <div class="program-card">
+                <div class="program-shape shape-5">
+                    <img src="{{ asset('images/seni.jpg') }}" alt="Kesenian" class="hover-img">
+                    <h3>Kesenian</h3>
+                    <p>Anak-anak PAUD kami menunjukkan baju adat dan budaya.</p>
+                </div>
+            </div>
         </div>
     </section>
     <!-- Lokasi Kami -->
@@ -118,7 +139,7 @@
     <div class="lokasi-container">
         <div class="lokasi-map">
         <iframe
-            src="https://www.google.com/maps/place/Perumahan+andi+caco+residence/@-4.840425,119.5344391,922m/data=!3m2!1e3!4b1!4m6!3m5!1s0x2dbe4f0b6768b60b:0xfdf5d8c8a00e67a9!8m2!3d-4.840425!4d119.537014!16s%2Fg%2F11fpslzk0b?authuser=0&entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D"
+            src="https://www.google.com/maps/place/Perumahan+jagong/@-4.8400195,119.5328041,3690m/data=!3m1!1e3!4m10!1m2!2m1!1sJl.Andi+Caco,+Komp.Perum+Tamalakko,+Kel.Jagong,+Kec.Pangkajene,+Kab.Pangkep,+Provinsi+Sulawesi+Selatan!3m6!1s0x2dbe4fe67cae41f3:0xd1684d82575c8e70!8m2!3d-4.8404391!4d119.537232!15sCmZKbC5BbmRpIENhY28sIEtvbXAuUGVydW0gVGFtYWxha2tvLCBLZWwuSmFnb25nLCBLZWMuUGFuZ2thamVuZSwgS2FiLlBhbmdrZXAsIFByb3ZpbnNpIFN1bGF3ZXNpIFNlbGF0YW6SAQVtb3RlbOABAA!16s%2Fg%2F11js_q6h5z?authuser=0&entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D"
             width="100%"
             height="300"
             style="border:0; border-radius: 15px;"
