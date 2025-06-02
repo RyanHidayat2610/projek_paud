@@ -12,7 +12,6 @@
     <header>
         <div class="container nav-container">
             <div class="logo">
-                <img src="logo.png" alt="Logo PAUD Khairani">
                 <span>PAUD AL ATHIRAH</span>
             </div>
             <nav>
@@ -30,7 +29,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="overlay"></div>
-        <img src="{{ asset('images/bg-paud.jpg') }}" alt="Background" class="bg-img">
+        <img src="{{ asset('images/bg4-paud.jpg') }}" alt="Background" class="bg-img">
         <div class="hero-content">
             <div class="hero-text">
                 <h3>PAUD AL ATHIRAH</h3>
@@ -44,7 +43,7 @@
     <section class="tentang-kami">
         <div class="tentang-container">
             <div class="tentang-img">
-                <img src="{{ asset('images/Tentang-kami.jpg') }}" alt="Tentang PAUD Khairani">
+                <img src="{{ asset('images/Tentang-kami.png') }}" alt="Tentang PAUD Khairani">
             </div>
             <div class="tentang-text">
                 <h2>Tentang PAUD AL ATHIRAH</h2>
@@ -77,20 +76,23 @@
         <div class="program-cards">
             <div class="program-card">
                 <div class="program-shape shape-1">
+                    <img src="{{ asset('images/kreatif.jpg') }}" alt="Belajar Bersama" class="hover-img">
                     <h3>Belajar Bersama</h3>
                     <p>Anak-anak antusias mengikuti kegiatan belajar bersama di PAUD kami.</p>
                 </div>
             </div>
             <div class="program-card">
                 <div class="program-shape shape-2" style="background-image: url('makan-bersama.jpg');">
-                    <h3>Makan Bersama</h3>
-                    <p>Anak-anak di PAUD kami menikmati makan siang bersama dalam suasana ceria.</p>
+                    <img src="{{ asset('images/ngaji.jpg') }}" alt="Mengaji Bersama" class="hover-img">
+                    <h3>Mengaji Bersama</h3>
+                    <p>Anak-anak di PAUD kami mengaji bersama dalam suasana ceria.</p>
                 </div>
             </div>
             <div class="program-card">
                 <div class="program-shape shape-3">
-                    <h3>Kunjungan PAUD</h3>
-                    <p>Anak-anak PAUD kami melakukan kunjungan ke berbagai tempat untuk belajar tentang alam, budaya, dan lingkungan.</p>
+                    <img src="{{ asset('images/sholat.jpg') }}" alt="Sholat Bersama" class="hover-img">
+                    <h3>Sholat Bersama</h3>
+                    <p>Anak-anak PAUD kami melakukan Sholat secara berjamaah.</p>
                 </div>
             </div>
         </div>
@@ -111,8 +113,8 @@
         </div>
         <div class="lokasi-info">
         <h2>Lokasi Kami</h2>
-        <p>Lokasi kami berada di JL.Pemuda, tempat penitipan dan pengasuhan anak terpercaya di Pangkep, Sulawesi Selatan. Kami menyediakan layanan penitipan anak yang aman dan edukatif.</p>
-        <a href="#kontak" class="lokasi-btn">Hubungi Kami</a>
+        <p>Lokasi kami berada di JL.Andi Caco, Komp. Perum Tamalakko, Kel.Jagong, Kec.Pangkajene, Kab.Pangkep, Provinsi Sulawesi Selatan tempat penitipan dan pengasuhan anak terpercaya di Pangkep, Sulawesi Selatan. Kami menyediakan layanan penitipan anak yang aman dan edukatif.</p>
+        <a href="https://wa.me/6281340120468" class="lokasi-btn">Hubungi Kami</a>
         </div>
     </div>
     </section>
@@ -129,30 +131,29 @@
         <div class="footer-column">
         <h3>PAUD AL ATHIRAH</h3>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#fasilitas">Fasilitas</a></li>
-            <li><a href="#program">Program</a></li>
-            <li><a href="#daftar">Pendaftaran</a></li>
-            <li><a href="#tentang">Tentang Kami</a></li>
-            <li><a href="#artikel">Artikel</a></li>
+            <li><a href="{{ url('/home') }}">Home</a></li>
+            <li><a href="{{ url('/fasilitas') }}">Fasilitas</a></li>
+            <li><a href="{{ url('/pendaftaran') }}">Pendaftaran</a></li>
+            <li><a href="{{ url('/about') }}">Tentang Kami</a></li>
+            <li><a href="{{ url('/artikel') }}">Artikel</a></li>
         </ul>
         </div>
 
         <div class="footer-column">
         <h3>Hubungi Kami</h3>
-        <p><i class="fa fa-map-marker-alt"></i> Jl Pemuda, Pangkep, Sulawesi Selatan</p>
+        <p><i class="fa fa-map-marker-alt"></i> Jl.Andi Caco, Komp.Perum Tamalakko, Kel.Jagong, Kec.Pangkajene, Kab.Pangkep, Provinsi Sulawesi Selatan</p>
+        <p><i class="fa fa-phone-alt"></i> atirapaud@gmail.com</p>
         <p><i class="fa fa-phone-alt"></i> +62 81340120468</p>
         <div class="footer-icons">
             <a href="https://wa.me/6281340120468" target="_blank">
-            <img src="whatsapp-icon.png" alt="WhatsApp" />
+            <img src="{{ asset('images/whatsap.png') }}" alt="WhatsApp" />
             </a>
-            <a href="https://instagram.com/" target="_blank">
-            <img src="instagram-icon.png" alt="Instagram" />
+            <a href="mailto:atirapaud@gmail.com" target="_blank">
+            <img src="{{ asset('images/imael.png') }}" alt="Email" />
             </a>
         </div>
         </div>
     </div>
     </footer>
-
 </body>
 </html>

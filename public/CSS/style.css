@@ -4,18 +4,44 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', sans-serif;
     color: #333;
     background-color: #fff;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
 }
 
 header {
-    background: white;
+    background: rgb(56, 167, 60);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 999;
+}
+
+/* Scroll Snap untuk Semua Section Utama */
+section,
+.tentang-kami,
+.kegiatan,
+.program,
+.lokasi,
+.footer {
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    flex-direction: column;
 }
 
 .container.nav-container {
@@ -40,7 +66,7 @@ header {
 .logo span {
     font-weight: bold;
     font-size: 18px;
-    color: #000;
+    color: #ffffff;
 }
 
 nav ul {
@@ -51,7 +77,7 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: #000;
+    color: #ffffff;
     font-weight: 500;
 }
 
@@ -67,7 +93,7 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding-top: 80px; /* untuk header */
+    padding-top: 80px;
 }
 
 .bg-img {
@@ -135,12 +161,9 @@ nav ul li a:hover {
     text-decoration: none;
 }
 
-
 /* Tentang Kami Section */
 .tentang-kami {
     background: linear-gradient(to bottom, #ffeb3b, #8bc34a);
-    padding: 80px 20px;
-    position: relative;
 }
 
 .tentang-container {
@@ -174,8 +197,9 @@ nav ul li a:hover {
 }
 
 .tentang-text p {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.7;
+    text-align: justify;
     color: #222;
     margin-bottom: 20px;
 }
@@ -198,10 +222,8 @@ nav ul li a:hover {
 /* Section Kegiatan */
 .kegiatan {
     background-color: #4caf50;
-    padding: 80px 20px;
     text-align: center;
     color: white;
-    position: relative;
     font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
@@ -253,63 +275,111 @@ nav ul li a:hover {
 .program {
     background: linear-gradient(to bottom, #a8e063, #f7dc6f);
     text-align: center;
-    padding: 80px 20px;
     font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .program h2 {
+    margin-top: 2px;
     font-size: 32px;
     color: #fff;
     margin-bottom: 50px;
+    justify-content: flex-start;
+    padding-top: 40px;
+
 }
 
 .program-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
+    margin-top: 30px;
 }
 
 .program-card {
-    width: 280px;
+    width: 400px;
+    height: 250;
+    border-radius: 15px;
+    overflow: hidden;
     position: relative;
+    background-color: #a7ffaa;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
+
+.program-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Menyesuaikan tanpa distorsi */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Di belakang teks */
+}
+
 
 .program-shape {
-    background-color: #4caf50;
-    padding: 40px 20px;
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    color: white;
-    height: 330px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     position: relative;
-    border: 5px dashed #2e7d32;
-    transition: transform 0.3s ease;
+    padding: 30px 20px;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.5);
 }
 
-.program-shape:hover {
-    transform: scale(1.05);
+
+.program-shape .hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    z-index: 1;
+    pointer-events: none;
 }
+
+.program-card:hover .hover-img {
+    opacity: 1;
+}
+
 
 .program-shape h3 {
+    margin-top: 10px;
     font-size: 20px;
     margin-bottom: 10px;
 }
 
 .program-shape p {
     font-size: 15px;
-    line-height: 1.4;
+    margin-top: 10px;
 }
 
-/* Optional Background Image Style */
 .shape-2 {
     background-size: cover;
     background-position: center;
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-    border-style: dashed;
+}
+
+
+.program-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.program-card:hover::before {
+    opacity: 1;
 }
 
 .btn-program {
@@ -331,7 +401,6 @@ nav ul li a:hover {
 /* Section Lokasi Kami */
 .lokasi {
     background-color: #4caf50;
-    padding: 80px 20px;
     color: #fff;
     font-family: 'Comic Sans MS', cursive, sans-serif;
 }
@@ -361,8 +430,9 @@ nav ul li a:hover {
 }
 
 .lokasi-info p {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.5;
+    text-align: justify;
     margin-bottom: 25px;
 }
 
@@ -380,76 +450,81 @@ nav ul li a:hover {
     background-color: #0d3d14;
 }
 
+/* Footer */
 .footer {
-  background-color: #2e7d32;
-  color: #fff;
-  padding: 60px 20px;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  position: relative;
+    background-color: #2e7d32;
+    color: #fff;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1100px;
-  margin: auto;
-  gap: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+    gap: 40px;
 }
 
 .footer-column {
-  flex: 1 1 250px;
+    flex: 1 1 250px;
 }
 
 .footer-column h3 {
-  color: #ffeb3b;
-  font-size: 20px;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #ffeb3b;
-  display: inline-block;
+    color: #ffeb3b;
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffeb3b;
+    display: inline-block;
 }
 
 .footer-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .footer-column ul li {
-  margin: 10px 0;
+    margin: 10px 0;
 }
 
 .footer-column ul li a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 .footer-column ul li a:hover {
-  color: #ffeb3b;
+    color: #ffeb3b;
 }
 
 .footer-column p {
-  margin-bottom: 10px;
-  font-size: 15px;
+    margin-bottom: 10px;
+    font-size: 15px;
 }
 
 .footer-icons img {
-  width: 35px;
-  margin-right: 10px;
-  transition: transform 0.3s;
+    width: 35px;
+    margin-right: 10px;
+    transition: transform 0.3s;
 }
 
 .footer-icons img:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .footer-wave {
-  position: absolute;
-  top: -30px;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: url('wave-top.svg') no-repeat center;
-  background-size: cover;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: url('wave-top.svg') no-repeat center;
+    background-size: cover;
+}
+
+footer {
+  scroll-snap-align: none !important;
+  scroll-snap-stop: normal !important;
+  height: auto !important;
 }
