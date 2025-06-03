@@ -1,15 +1,14 @@
 <?php
+// routes/web.php
+use App\Http\Controllers\Auth\LoginController;
 
-use Illuminate\Support\Facades\Route;
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
-Route::get('/home', function () {
-    return view('home');
-});
-
-Route::get('/about', function () {
-    return view('about');
+Route::get('/dashboard', function () {
+    if (!session()->has('id_admin')) {
+        return redirect('/login');
+    }
+    return view('admin.home');;
 });
