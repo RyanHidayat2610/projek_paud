@@ -13,7 +13,7 @@
         <div class="container nav-container">
             <div class="logo">
                 <img src="logo.png" alt="Logo PAUD Khairani">
-                <span>PAUD AL ATHIRAH</span>
+                <span>PAUD AL ATHIRAH MENYALA</span>
             </div>
             <nav>
                 <ul>
