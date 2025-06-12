@@ -45,7 +45,7 @@
                     <div class="program-card">
                         <div class="program-shape shape-1">
                             <img src="{{ asset('images/kreatif.jpg') }}" alt="Belajar Bersama" class="hover-img">
-                            <h3>Belajar Bersama</h3>
+                            <h3>Belajar Bersamaaa</h3>
                             <p>Anak-anak antusias mengikuti kegiatan belajar bersama di PAUD kami.</p>
                         </div>
                     </div>
