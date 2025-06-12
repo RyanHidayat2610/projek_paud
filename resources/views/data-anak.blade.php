@@ -50,9 +50,9 @@
             </td>
 
             <td>
-                @if ($anak->status == 'diterima')
+                @if($anak->status == 'diterima')
                     <span style="color: green; font-weight: bold;">Diterima</span>
-                @elseif ($anak->status == 'ditolak')
+                @elseif($anak->status == 'ditolak')
                     <span style="color: red; font-weight: bold;">Ditolak</span>
                 @else
                     <span style="color: orange; font-weight: bold;">Diproses</span>
@@ -60,19 +60,23 @@
             </td>
 
             <td>
-                <form action="{{ route('anak.updateStatus', $anak->id) }}" method="POST" style="display:inline-block;">
-                    @csrf
-                    @method('PATCH')
-                    <input type="hidden" name="status" value="diterima">
-                    <button type="submit">Terima</button>
-                </form>
+                @if($anak->status == 'diproses')
+                    <form action="{{ route('anak.updateStatus', $anak->id) }}" method="POST" style="display:inline-block;">
+                        @csrf
+                        @method('PATCH')
+                        <input type="hidden" name="status" value="diterima">
+                        <button type="submit">Terima</button>
+                    </form>
 
-                <form action="{{ route('anak.updateStatus', $anak->id) }}" method="POST" style="display:inline-block;">
-                    @csrf
-                    @method('PATCH')
-                    <input type="hidden" name="status" value="ditolak">
-                    <button type="submit">Tolak</button>
-                </form>
+                    <form action="{{ route('anak.updateStatus', $anak->id) }}" method="POST" style="display:inline-block;">
+                        @csrf
+                        @method('PATCH')
+                        <input type="hidden" name="status" value="ditolak">
+                        <button type="submit">Tolak</button>
+                    </form>
+                @else
+                    <em>Tindakan selesai</em>
+                @endif
             </td>
         </tr>
         @endforeach

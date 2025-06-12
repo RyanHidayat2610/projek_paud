@@ -9,7 +9,7 @@ class FormulirAnakController extends Controller
 {   
     public function updateStatus(Request $request, $id)
 {
-    $anak = Anak::findOrFail($id);
+    $anak = FormulirAnak::findOrFail($id);
     $anak->status = $request->status;
     $anak->save();
 
