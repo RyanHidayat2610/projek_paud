@@ -45,10 +45,7 @@ Route::get('/list-peserta', function () {
     return view('peserta');
 });
 
-Route::get('/data-anak', function () {
-    $data = Anak::all();
-    return view('data-anak', ['title' => 'Data Pendaftar'], compact('data'));
-});
+
 
 Route::get('/formulir-anak', [FormulirAnakController::class, 'create']);
 
@@ -56,5 +53,5 @@ Route::post('/formulir-anak', [FormulirAnakController::class, 'store']);
 
 Route::get('/data-anak', [FormulirAnakController::class, 'DataAnak']);
 
-Route::patch('/anak/{id}/status', [AnakController::class, 'updateStatus'])->name('anak.updateStatus');
+Route::patch('/anak/{id}/status', [FormulirAnakController::class, 'updateStatus'])->name('anak.updateStatus');
 
