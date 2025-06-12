@@ -27,11 +27,17 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="overlay"></div>
-        <img src="{{ asset('images/bg-paud.jpg') }}" alt="Background" class="bg-img">
-    </section>
+    <div class="slider">
+    <div class="slides">
+        <img src="{{ asset('images/bg-paud.jpg') }}" class="slide active" alt="Gambar 1">
+        <img src="{{ asset('images/belajar.jpg') }}" class="slide" alt="Gambar 2">
+        <img src="{{ asset('images/belajar1.jpg') }}" class="slide" alt="Gambar 3">
+    </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+
+
     <!-- Tentang Kami Section -->
     <section class="tentang-kami">
         <div class="tentang-container">
@@ -144,7 +150,33 @@
         </div>
         </div>
     </div>
-    </footer>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
 
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) slide.classList.add('active');
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Ganti otomatis setiap 4 detik
+        setInterval(nextSlide, 4000);
+
+        // Tampilkan slide pertama
+        showSlide(currentSlide);
+    </script>
+    </footer>
 </body>
 </html>
