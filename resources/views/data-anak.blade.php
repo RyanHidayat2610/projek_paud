@@ -73,6 +73,7 @@
                         @method('PATCH')
                         <input type="hidden" name="status" value="ditolak">
                         <button type="submit">Tolak</button>
+
                     </form>
                 @else
                     <em>Tindakan selesai</em>

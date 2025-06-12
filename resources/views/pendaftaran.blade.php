@@ -14,7 +14,6 @@
                         <a href="/formulir" class="btn-daftar">Daftar</a>
                     </div>
                 </div>
-                
             </section> 
         </div>
 @endsection
