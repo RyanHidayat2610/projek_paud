@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormulirAnakController;
-use App\Models\Anak;
+
 
 
 Route::get('/login', function () {
