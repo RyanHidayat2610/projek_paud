@@ -8,7 +8,7 @@
                 <img src="{{ asset('images/bg4-paud.jpg') }}" alt="Background" class="bg-img">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h3>PAUD AL ATHIRAH menyala</h3>
+                        <h3>PAUD AL ATHIRAH menyala sekali</h3>
                         <h1>Tempat anak belajar<br> dan bertumbuh</h1>
                         <p>Segera daftarkan anak Anda!</p>
                         <a href="/formulir" class="btn-daftar">Daftar</a>
