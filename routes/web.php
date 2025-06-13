@@ -55,3 +55,11 @@ Route::get('/data-anak', [FormulirAnakController::class, 'DataAnak']);
 
 Route::patch('/anak/{id}/status', [FormulirAnakController::class, 'updateStatus'])->name('anak.updateStatus');
 
+use App\Http\Controllers\AdminAuthController;
+
+Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminAuthController::class, 'login']);
+Route::get('/admin/reset-password', [AdminAuthController::class, 'showResetForm'])->name('admin.reset');
+Route::post('/admin/reset-password', [AdminAuthController::class, 'sendResetLink']);
+Route::get('/admin/reset-password/{token}', [AdminAuthController::class, 'showNewPasswordForm'])->name('admin.reset.form');
+Route::post('/admin/reset-password/{token}', [AdminAuthController::class, 'updatePassword']);
