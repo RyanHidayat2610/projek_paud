@@ -51,7 +51,26 @@ Route::get('/formulir-anak', [FormulirAnakController::class, 'create']);
 
 Route::post('/formulir-anak', [FormulirAnakController::class, 'store']);
 
-Route::get('/data-anak', [FormulirAnakController::class, 'DataAnak']);
+// Route::get('/data-anak', [FormulirAnakController::class, 'DataAnak']);
+
+Route::get('/admin/pendaftar', [FormulirAnakController::class, 'DataAnak']);
 
 Route::patch('/anak/{id}/status', [FormulirAnakController::class, 'updateStatus'])->name('anak.updateStatus');
+
+
+
+
+
+Route::get('/admin/home', function () {
+    return view('admin.admin-home', ['title' => 'Halaman Admin']);
+});
+
+Route::get('/admin/about', function () {
+    return view('admin.admin-about', ['title' => 'Admin About']);
+});
+
+Route::get('/admin/artikel', function () {
+    return view('admin.admin-artikel', ['title' => 'Admin Artikel']);
+});
+
 
