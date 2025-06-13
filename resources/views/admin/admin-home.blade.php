@@ -1,5 +1,7 @@
 @extends('admin.admin-components.admin-layout')
 
+
+
 @section('admin-content')
         <div>
                 <!-- Hero Section -->
