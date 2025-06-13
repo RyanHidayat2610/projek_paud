@@ -86,5 +86,37 @@
                         </div>
                     </div>
                 </section>
+<!-- Artikel Edukasi -->
+<section class="artikel-horizontal">
+    <h2>Artikel Edukasi</h2>
+
+    <div class="artikel-item">
+        <img src="{{ asset('images/Eren.png') }}" alt="Manfaat Bermain">
+        <div class="artikel-content">
+            <h3>Manfaat Bermain dalam Tumbuh Kembang Anak</h3>
+            <p>Bermain adalah cara anak belajar dan berkembang. Aktivitas bermain mendukung perkembangan motorik, sosial, dan intelektual anak secara alami dan menyenangkan.</p>
+            <a href="#" class="btn-artikel">Baca Selengkapnya</a>
+        </div>
+    </div>
+
+    <div class="artikel-item">
+        <img src="{{ asset('images/HSR.png') }}" alt="Gizi Seimbang">
+        <div class="artikel-content">
+            <h3>Pentingnya Gizi Seimbang untuk Anak Usia Dini</h3>
+            <p>Gizi yang baik sangat penting untuk pertumbuhan optimal anak. Artikel ini menjelaskan makanan apa saja yang diperlukan untuk tumbuh sehat dan kuat.</p>
+            <a href="#" class="btn-artikel">Baca Selengkapnya</a>
+        </div>
+    </div>
+
+    <div class="artikel-item">
+        <img src="{{ asset('images/Asta.png') }}" alt="Stimulasi Anak">
+        <div class="artikel-content">
+            <h3>Stimulasi Dini untuk Kecerdasan Anak</h3>
+            <p>Stimulasi sejak dini meningkatkan kemampuan belajar anak. Ketahui cara sederhana menstimulasi anak dengan kegiatan sehari-hari di rumah maupun sekolah.</p>
+            <a href="#" class="btn-artikel">Baca Selengkapnya</a>
+        </div>
+    </div>
+</section>
+
         </div>
 @endsection
