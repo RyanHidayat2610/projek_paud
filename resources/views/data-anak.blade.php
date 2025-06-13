@@ -51,11 +51,11 @@
 
             <td>
                 @if($anak->status == 'diterima')
-                    <span class="badge bg-success">Diterima</span>
+                    <span style="color: green; font-weight: bold;">Diterima</span>
                 @elseif($anak->status == 'ditolak')
-                    <span class="badge bg-danger">Ditolak</span>
+                    <span style="color: red; font-weight: bold;">Ditolak</span>
                 @else
-                    <span class="badge bg-warning text-dark">Diproses</span>
+                    <span style="color: orange; font-weight: bold;">Diproses</span>
                 @endif
             </td>
 
@@ -65,14 +65,15 @@
                         @csrf
                         @method('PATCH')
                         <input type="hidden" name="status" value="diterima">
-                        <button type="submit" class="btn btn-success btn-sm">Terima</button>
+                        <button type="submit">Terima</button>
                     </form>
 
-                    <form action="{{ route('anak.updateStatus', $anak->id) }}" method="POST" style="display:inline-block; margin-left: 5px;">
+                    <form action="{{ route('anak.updateStatus', $anak->id) }}" method="POST" style="display:inline-block;">
                         @csrf
                         @method('PATCH')
                         <input type="hidden" name="status" value="ditolak">
-                        <button type="submit" class="btn btn-danger btn-sm">Tolak</button>
+                        <button type="submit">Tolak</button>
+
                     </form>
                 @else
                     <em>Tindakan selesai</em>
