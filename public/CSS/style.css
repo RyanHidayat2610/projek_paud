@@ -33,9 +33,9 @@ section,
 .program,
 .lokasi,
 .footer {
-    height: 100vh;
+    /*height: 100vh;
     scroll-snap-align: start;
-    scroll-snap-stop: always;
+    scroll-snap-stop: always; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -714,9 +714,51 @@ footer {
     }
 }
 .artikel-horizontal {
-    padding: 60px 20px;
-    background-color: #fdfdfd;
+    background-color: #fdfdfd; /* Ganti sesuai warna background yang diinginkan */
+    padding: 40px 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
+
+.artikel-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.artikel-item img {
+    width: 200px;
+    height: 130px;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 3px solid #eee;
+    border-radius: 10px;
+}
+
+.artikel-content {
+    flex: 1;
+}
+
+.btn-artikel {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-artikel:hover {
+    background-color: #218838;
+}
+
 
 .artikel-horizontal h2 {
     text-align: center;
@@ -732,19 +774,26 @@ footer {
     margin-bottom: 30px;
 }
 
-
 .artikel-item:hover {
     transform: translateY(-4px);
+    transition: ease-in-out 1s;
 }
 
 .artikel-item img {
-    width: 220px;
-    height: auto; /* biar proporsional */
-    max-height: 150px; /* batasi tinggi maksimal */
-    object-fit: contain; /* Gambar utuh, tidak dipotong */
-    border-radius: 10px;
-    flex-shrink: 0;
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    object-fit: cover;
+    border: 4px solid #f0f0f0; /* Warna bingkai */
+    border-radius: 10px;        /* Sudut sedikit membulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambahan bayangan lembut */
+    transition: transform 0.3s ease; /* Biar smooth saat hover */
 }
+
+.artikel-item img:hover {
+    transform: scale(1.03); /* Efek zoom sedikit saat hover */
+}
+
 
 
 .artikel-content {
@@ -797,5 +846,32 @@ footer {
         margin-top: 15px;
     }
 }
+
+.artikel-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 600px;
+}
+
+.detail {
+  margin-top: 1rem;
+  color: #444;
+}
+
+.detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+  padding: 0;
+}
+
+.detail.show {
+  max-height: 500px; /* Sesuaikan tergantung konten maksimal */
+  padding: 1rem 0;
+}
+
 
 

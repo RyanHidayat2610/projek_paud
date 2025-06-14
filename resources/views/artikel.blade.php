@@ -91,32 +91,96 @@
     <h2>Artikel Edukasi</h2>
 
     <div class="artikel-item">
-        <img src="{{ asset('images/Eren.png') }}" alt="Manfaat Bermain">
-        <div class="artikel-content">
-            <h3>Manfaat Bermain dalam Tumbuh Kembang Anak</h3>
-            <p>Bermain adalah cara anak belajar dan berkembang. Aktivitas bermain mendukung perkembangan motorik, sosial, dan intelektual anak secara alami dan menyenangkan.</p>
-            <a href="#" class="btn-artikel">Baca Selengkapnya</a>
+    <img src="{{ asset('images/Eren.png') }}" alt="Manfaat Bermain">
+    <div class="artikel-content">
+        <h3>Manfaat Bermain dalam Tumbuh Kembang Anak</h3>
+        <p>Bermain adalah cara anak belajar dan berkembang.</p>
+
+        <div class="detail">
+            <p>Bermain membantu anak-anak mengembangkan keterampilan motorik halus dan kasar, kemampuan sosial, serta kecerdasan emosional. Lewat permainan, anak belajar berbagi, bekerja sama, dan menyelesaikan konflik. Aktivitas seperti bermain peran atau permainan konstruktif juga merangsang imajinasi dan kemampuan memecahkan masalah. Bermain di luar ruangan memperkuat otot dan koordinasi gerak, serta meningkatkan sistem imun anak karena terpapar lingkungan sekitar.</p>
         </div>
+
+        <button type="button" class="btn-artikel" onclick="toggleDetail(this)">Baca Selengkapnya</button>
     </div>
+</div>
+
 
     <div class="artikel-item">
-        <img src="{{ asset('images/HSR.png') }}" alt="Gizi Seimbang">
-        <div class="artikel-content">
-            <h3>Pentingnya Gizi Seimbang untuk Anak Usia Dini</h3>
-            <p>Gizi yang baik sangat penting untuk pertumbuhan optimal anak. Artikel ini menjelaskan makanan apa saja yang diperlukan untuk tumbuh sehat dan kuat.</p>
-            <a href="#" class="btn-artikel">Baca Selengkapnya</a>
+    <img src="{{ asset('images/HSR.png') }}" alt="Gizi Seimbang">
+    <div class="artikel-content">
+        <h3>Pentingnya Gizi Seimbang untuk Anak Usia Dini</h3>
+        <p>Gizi yang baik sangat penting untuk pertumbuhan optimal anak.</p>
+
+        <div class="detail">
+            <p>Pada masa pertumbuhan, anak-anak membutuhkan asupan makanan bergizi seperti protein, karbohidrat kompleks, lemak sehat, serta vitamin dan mineral. Kekurangan gizi dapat menyebabkan pertumbuhan terhambat, sistem imun lemah, dan kesulitan belajar. Makanan seperti buah, sayur, susu, ikan, dan telur sangat penting dalam menu harian anak. Orang tua dan pendidik perlu memahami kebutuhan kalori dan nutrisi anak sesuai usia dan aktivitas fisik mereka agar tumbuh kembang berjalan optimal.</p>
         </div>
+
+        <button type="button" class="btn-artikel" onclick="toggleDetail(this)">Baca Selengkapnya</button>
     </div>
+</div>
+
 
     <div class="artikel-item">
-        <img src="{{ asset('images/Asta.png') }}" alt="Stimulasi Anak">
-        <div class="artikel-content">
-            <h3>Stimulasi Dini untuk Kecerdasan Anak</h3>
-            <p>Stimulasi sejak dini meningkatkan kemampuan belajar anak. Ketahui cara sederhana menstimulasi anak dengan kegiatan sehari-hari di rumah maupun sekolah.</p>
-            <a href="#" class="btn-artikel">Baca Selengkapnya</a>
+    <img src="{{ asset('images/Asta.png') }}" alt="Stimulasi Anak">
+    <div class="artikel-content">
+        <h3>Stimulasi Dini untuk Kecerdasan Anak</h3>
+        <p>Stimulasi sejak dini meningkatkan kemampuan belajar anak.</p>
+
+        <div class="detail">
+            <p>Stimulasi dapat berupa sentuhan, suara, warna, atau aktivitas bermain yang melibatkan interaksi antara anak dan orang dewasa. Misalnya, membaca cerita bersama anak, bernyanyi, dan bermain dengan balok warna-warni dapat mempercepat perkembangan otak. Periode emas perkembangan otak terjadi sebelum usia 6 tahun, sehingga orang tua dan guru perlu aktif memberikan stimulasi positif setiap hari. Kegiatan sederhana seperti mengajak anak berbicara, meniru suara binatang, atau menyusun puzzle sudah sangat membantu meningkatkan kecerdasan anak.</p>
         </div>
+
+        <button type="button" class="btn-artikel" onclick="toggleDetail(this)">Baca Selengkapnya</button>
+    </div>
+</div>
+
+    
+    <div class="artikel-item">
+    <img src="{{ asset('images/Asta.png') }}" alt="Stimulasi Anak">
+    <div class="artikel-content">
+        <h3>Stimulasi Dini untuk Kecerdasan Anak</h3>
+        <p>Stimulasi sejak dini meningkatkan kemampuan belajar anak.</p>
+
+        <div class="detail">
+            <p>Stimulasi dapat berupa sentuhan, suara, warna, atau aktivitas bermain yang melibatkan interaksi antara anak dan orang dewasa. Misalnya, membaca cerita bersama anak, bernyanyi, dan bermain dengan balok warna-warni dapat mempercepat perkembangan otak. Periode emas perkembangan otak terjadi sebelum usia 6 tahun, sehingga orang tua dan guru perlu aktif memberikan stimulasi positif setiap hari. Kegiatan sederhana seperti mengajak anak berbicara, meniru suara binatang, atau menyusun puzzle sudah sangat membantu meningkatkan kecerdasan anak.</p>
+        </div>
+
+        <button type="button" class="btn-artikel" onclick="toggleDetail(this)">Baca Selengkapnya</button>
+    </div>
+</div>
+
+<div class="artikel-item">
+    <img src="{{ asset('images/HSR.png') }}" alt="Gizi Seimbang">
+    <div class="artikel-content">
+        <h3>Pentingnya Gizi Seimbang untuk Anak Usia Dini</h3>
+        <p>Gizi yang baik sangat penting untuk pertumbuhan optimal anak.</p>
+
+        <div class="detail">
+            <p>Pada masa pertumbuhan, anak-anak membutuhkan asupan makanan bergizi seperti protein, karbohidrat kompleks, lemak sehat, serta vitamin dan mineral. Kekurangan gizi dapat menyebabkan pertumbuhan terhambat, sistem imun lemah, dan kesulitan belajar. Makanan seperti buah, sayur, susu, ikan, dan telur sangat penting dalam menu harian anak. Orang tua dan pendidik perlu memahami kebutuhan kalori dan nutrisi anak sesuai usia dan aktivitas fisik mereka agar tumbuh kembang berjalan optimal.</p>
+        </div>
+
+        <button type="button" class="btn-artikel" onclick="toggleDetail(this)">Baca Selengkapnya</button>
+    </div>
+</div>
+
+
     </div>
 </section>
 
         </div>
+
+
+<script>
+function toggleDetail(button) {
+    const detail = button.parentElement.querySelector('.detail');
+    if (!detail) return;
+
+    detail.classList.toggle('show');
+    const isVisible = detail.classList.contains('show');
+    button.innerText = isVisible ? "Tutup" : "Baca Selengkapnya";
+}
+</script>
+
+
+
 @endsection
