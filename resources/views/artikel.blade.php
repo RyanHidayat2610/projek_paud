@@ -86,5 +86,33 @@
                         </div>
                     </div>
                 </section>
+                <!-- Artikel Terbaru -->
+                <section class="artikel-section">
+                    <h2>Artikel Terbaru</h2>
+                    <table class="artikel-table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Judul</th>
+                                <th>Konten</th>
+                                <th>Tanggal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($artikels as $index => $artikel)
+                                <tr>
+                                    <td>{{ $index + 1 }}</td>
+                                    <td>{{ $artikel->judul }}</td>
+                                    <td>{{ \Illuminate\Support\Str::limit($artikel->konten, 100) }}</td>
+                                    <td>{{ $artikel->created_at->format('d M Y') }}</td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="4" style="text-align: center;">Belum ada artikel tersedia.</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </section>
         </div>
 @endsection

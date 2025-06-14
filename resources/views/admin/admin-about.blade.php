@@ -1,6 +1,6 @@
 @extends('admin.admin-components.admin-layout')
 
-@section('admin-content')
+@section('content')
         <div>
                 <!-- Hero Section -->
             <section class="hero">

@@ -189,6 +189,44 @@
                     }
                 }
             </script>
+
+            <!-- Data Guru -->
+            <h2>Data Guru</h2>
+            <div class="table-container">
+                <table class="data-guru-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Jenis</th>
+                            <th>Riwayat Sekolah</th>
+                            <th>Hobi</th>
+                            <th>Motivasi</th>
+                            <th>Foto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($gurus as $index => $guru)
+                        <tr>
+                            <td>{{ $index + 1 }}</td>
+                            <td>{{ $guru->nama }}</td>
+                            <td>{{ $guru->jenis_guru }}</td>
+                            <td>{{ $guru->riwayat_sekolah }}</td>
+                            <td>{{ $guru->hobi }}</td>
+                            <td>{{ $guru->motivasi }}</td>
+                            <td>
+                                @if($guru->foto_profile)
+                                    <img src="{{ asset('storage/' . $guru->foto_profile) }}" alt="Foto Guru" width="60">
+                                @else
+                                    <span>Tidak Ada</span>
+                                @endif
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+
             <!-- Kegiatan Unggulan Kami -->
             <section class="kegiatan">
                 <h2>Kegiatan Kami</h2>
