@@ -11,8 +11,10 @@ use Illuminate\Support\Str;
 use App\Models\Admin;
 use App\Mail\AdminResetPasswordMail;
 
+
 class AdminAuthController extends Controller
 {
+    
     public function showLoginForm()
     {
         return view('admin.login');
@@ -59,15 +61,15 @@ class AdminAuthController extends Controller
     public function showNewPasswordForm($token)
     {
         $admin = Admin::where('reset_token', $token)
-                      ->where('reset_token_expiry', '>=', Carbon::now())
-                      ->first();
+        ->where('reset_token_expiry', '>', now())
+        ->first();
 
-        if (!$admin) {
-            return redirect()->route('admin.reset')->with('error', 'Token tidak valid atau sudah kedaluwarsa.');
-        }
-
-        return view('admin.new-password', ['token' => $token]);
+    if (!$admin) {
+        return abort(404, 'Token tidak valid atau sudah kedaluwarsa.');
     }
+
+    return view('admin.new-password', ['token' => $token]);
+}
 
     public function updatePassword(Request $request, $token)
     {
@@ -89,4 +91,5 @@ class AdminAuthController extends Controller
 
         return redirect()->route('admin.login')->with('success', 'Sandi berhasil diubah.');
     }
+    
 }

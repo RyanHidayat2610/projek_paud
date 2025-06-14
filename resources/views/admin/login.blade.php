@@ -3,30 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Login Admin</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f4f6f9;
-        }
-        .login-container {
-            margin-top: 100px;
-        }
-        .card {
-            border-radius: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .btn-primary {
-            width: 100%;
-        }
-        .form-control {
-            border-radius: 10px;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('CSS/admin/admin-login.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 </head>
 <body>
-<div class="container login-container">
-    <div class="row justify-content-center">
-        <div class="col-md-4">
+    <div class="left-image">
+        <img src="{{ asset('images/admin/sekolah-login.jpg') }}" alt="Foto Sekolah">
+    </div>
+
+    <div class="right-form">
+        <div class="card">
+            <h4>Login Admin</h4>
+
             @if (session('error'))
                 <div class="alert alert-danger">{{ session('error') }}</div>
             @endif
@@ -35,26 +25,37 @@
                 <div class="alert alert-success">{{ session('success') }}</div>
             @endif
 
-            <div class="card p-4">
-                <h4 class="text-center mb-4">Login Admin</h4>
-                <form method="POST" action="{{ url('/admin/login') }}">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" name="username" class="form-control" id="username" required autofocus>
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Kata Sandi</label>
-                        <input type="password" name="password" class="form-control" id="password" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Masuk</button>
-                </form>
-                <div class="text-center mt-3">
-                    <a href="{{ route('admin.reset') }}">Lupa Kata Sandi?</a>
+            <form method="POST" action="{{ url('/admin/login') }}">
+                @csrf
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" name="username" class="form-control" id="username" required autofocus>
                 </div>
-            </div>
+                <div class="mb-3 password-toggle">
+    <label for="password" class="form-label">Kata Sandi</label>
+    <input type="password" name="password" class="form-control" id="password" required>
+    <i class="bi bi-eye-slash password-toggle-icon" id="togglePassword"></i>
+                </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function () {
+        // Toggle the type attribute
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+
+        // Toggle the eye / eye-slash icon
+        this.classList.toggle('bi-eye');
+        this.classList.toggle('bi-eye-slash');
+    });
+</script>
+
+                <button type="submit" class="btn btn-primary">Masuk</button>
+            </form>
+            <a href="{{ route('admin.reset') }}">Lupa Kata Sandi?</a>
         </div>
     </div>
-</div>
 </body>
 </html>

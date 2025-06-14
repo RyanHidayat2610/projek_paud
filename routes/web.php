@@ -63,3 +63,5 @@ Route::get('/admin/reset-password', [AdminAuthController::class, 'showResetForm'
 Route::post('/admin/reset-password', [AdminAuthController::class, 'sendResetLink']);
 Route::get('/admin/reset-password/{token}', [AdminAuthController::class, 'showNewPasswordForm'])->name('admin.reset.form');
 Route::post('/admin/reset-password/{token}', [AdminAuthController::class, 'updatePassword']);
+
+
