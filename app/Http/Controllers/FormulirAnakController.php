@@ -20,7 +20,11 @@ class FormulirAnakController extends Controller
     public function DataAnak()
     {
         $data = FormulirAnak::all(); // Ambil semua data anak dari database
-        return view('data-anak', compact('data'));
+        return view('admin.admin-pendaftar', [
+            'data' => $data,
+            'title' => 'Admin Pendaftar'
+        ]);
+
     }
 
 

@@ -799,3 +799,46 @@ footer {
 }
 
 
+/* Artikel Section */
+
+.artikel-section {
+    margin: 40px 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.artikel-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.artikel-table th, .artikel-table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+}
+
+.artikel-table th {
+    background-color: #f0f0f0;
+}
+
+/* Artikel Guru Section */
+.data-guru-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.data-guru-table th,
+.data-guru-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.data-guru-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
