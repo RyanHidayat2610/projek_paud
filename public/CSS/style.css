@@ -17,14 +17,7 @@ body {
     height: 100vh;
 }
 
-header {
-    background: rgb(56, 167, 60);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-}
+
 
 /* Scroll Snap untuk Semua Section Utama */
 section,
@@ -44,14 +37,7 @@ section,
     flex-direction: column;
 }
 
-.container.nav-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+
 
 nav ul li.masuk a,
 nav ul li.daftar a {
@@ -757,4 +743,8 @@ footer {
     background-color: #f2f2f2;
     font-weight: bold;
 }
+
+
+
+
 

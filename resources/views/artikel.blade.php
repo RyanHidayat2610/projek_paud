@@ -2,14 +2,6 @@
 
 @section('content')
 <link rel="stylesheet" href="{{ asset('CSS/artikel-blade.css') }}">
-
-<div>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="overlay"></div>
-        <img src="{{ asset('images/bg-paud.jpg') }}" alt="Background" class="bg-img">
-    </section>
-</div>
 <section class="artikel-horizontal">
     <h2>Artikel Edukasi</h2>
     <div class="artikel-container">

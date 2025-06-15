@@ -4,12 +4,6 @@
 <link rel="stylesheet" href="{{ asset('CSS/about-blade.css') }}">
 
 <div>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="overlay"></div>
-        <img src="{{ asset('images/bg-paud.jpg') }}" alt="Background" class="bg-img">
-    </section>
-
     <!-- Tentang Kami Section -->
     <section class="tentang-kami">
         <div class="tentang-container">
