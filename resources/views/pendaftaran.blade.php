@@ -1,11 +1,11 @@
 @extends('components.layout')
-
+<x-header-img />
 @section('content')
+<link rel="stylesheet" href="{{ asset('CSS/pendaftar-blade.css') }}">
+
         <div>
-                <!-- Hero Section -->
+            <!-- Hero Section -->
             <section class="hero">
-                <div class="overlay"></div>
-                <img src="{{ asset('images/bg4-paud.jpg') }}" alt="Background" class="bg-img">
                 <div class="hero-content">
                     <div class="hero-text">
                         <h3>PAUD AL ATHIRAH</h3>

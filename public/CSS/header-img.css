@@ -1,0 +1,145 @@
+/* ===========================
+   RESET & BASE
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #466544;
+}
+
+/* ===========================
+   HERO SLIDER FULLSCREEN
+   =========================== */
+.hero-section3 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.slider-wrapper {
+    margin-top: 0;              /* pastikan tidak ada margin atas */
+    padding-top: 0;             /* pastikan tidak ada padding atas */
+    position: relative;
+    top: 0;
+    width: 100vw;        /* Penuh ke kiri-kanan */
+    height: 70vh;        /* Hanya 70% tinggi layar */
+    overflow: hidden;    /* Hindari scroll tak perlu */
+    background-size: cover;
+    background-position: top;
+    background-color: #000;
+    overflow: hidden;
+    margin-top: -280px;  /* atur sesuai tinggi navbar Anda */
+    z-index: 0;
+}
+
+.slider-container {
+    display: flex;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+/* Masing-masing slide */
+.slide {
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg-img3 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===========================
+   HERO TEXT OVERLAY
+   =========================== */
+.hero-section5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.hero-text5 h1 {
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 3px 3px 15px #000;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 36px;
+    border-radius: 14px;
+    max-width: 90%;
+}
+
+/* Responsive font */
+@media (max-width: 768px) {
+    .hero-text5 h1 {
+        font-size: 2rem;
+        padding: 12px 24px;
+    }
+}
+
+/* ===========================
+   TOMBOL NAVIGASI
+   =========================== */
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    padding: 10px 16px;
+    cursor: pointer;
+    z-index: 3;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+button.prev:hover,
+button.next:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%) scale(1.1);
+}
+
+button.prev {
+    left: 20px;
+}
+
+button.next {
+    right: 20px;
+}
