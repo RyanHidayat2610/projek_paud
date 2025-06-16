@@ -14,7 +14,7 @@
             @endfor
         </div>
 
-        <div class="hero-section5">
+        <div class="kami">
             <div class="hero-text5">
                 <h1>PAUD AL ATHIRAH</h1>
             </div>

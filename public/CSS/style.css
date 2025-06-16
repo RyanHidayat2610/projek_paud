@@ -5,21 +5,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 html {
     scroll-behavior: smooth;
 }
-
 body {
     font-family: 'Segoe UI', sans-serif;
     color: #333;
-    background-color: #c52525;
-    /*scroll-snap-type: y mandatory;*/
+    background-color: #c52525; /* Ganti ke putih atau warna lain sesuai desain */
     overflow-y: scroll;
-    height: 100vh;
+    min-height: 100vh; /* <-- gunakan min-height, bukan height */
 }
-
 
 /* ========================== */
 /* NAVIGASI HEADER */
@@ -99,6 +97,7 @@ section,
 /* SECTION: TENTANG KAMI */
 /* ========================== */
 .tentang-kami {
+    margin-top: -280px;
     background: linear-gradient(to bottom, #ffeb3b, #8bc34a);
 }
 

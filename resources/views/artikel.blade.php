@@ -3,46 +3,98 @@
 @section('content')
 <link rel="stylesheet" href="{{ asset('CSS/artikel-blade.css') }}">
 
+<!-- Artikel Section -->
 <section class="artikel-horizontal">
     <h2>Artikel Edukasi</h2>
     <div class="artikel-container">
-        @foreach ($artikels as $artikel)
-        <div class="artikel-item" onclick="openModal({{ $artikel->id }})">
-            <div class="artikel-images">
+        @foreach ($artikels as $index => $artikel)
+        <div class="artikel-wrapper">
+            <div class="artikel-item">
                 @if ($artikel->gambar1)
-                    <img src="{{ asset('storage/' . $artikel->gambar1) }}" alt="Gambar 1">
+                <div class="artikel-images">
+                    <img src="{{ asset('storage/' . $artikel->gambar1) }}" alt="Gambar Artikel">
+                </div>
                 @endif
-            </div>
-            <div class="artikel-content">
-                <h3>{{ $artikel->judul }}</h3>
-                <p>{{ \Illuminate\Support\Str::limit($artikel->konten, 150) }}</p>
-                <span class="tanggal-artikel">{{ $artikel->created_at->format('d M Y') }}</span>
-                <a href="#" class="btn-artikel">Baca Selengkapnya</a>
-            </div>
-        </div>
 
-        {{-- Modal --}}
-        <div id="modal-{{ $artikel->id }}" class="modal-overlay" onclick="closeModal(event, {{ $artikel->id }})">
-            <div class="modal-content" onclick="event.stopPropagation()">
-                <span class="close-btn" onclick="closeModal(event, {{ $artikel->id }})">&times;</span>
-                <h2>{{ $artikel->judul }}</h2>
-                <p>{{ $artikel->konten }}</p>
-                @if ($artikel->gambar2)
-                    <img src="{{ asset('storage/' . $artikel->gambar2) }}" alt="Gambar 2" class="modal-image">
-                @endif
+                <div class="artikel-content">
+                    <h3>{{ $artikel->judul }}</h3>
+                    <span class="tanggal-artikel">{{ $artikel->created_at->format('d M Y') }}</span>
+
+                    <div class="artikel-detail" id="detail-{{ $artikel->id }}">
+                        <div class="detail-inner">
+                            @php
+                                $kontenFull = strip_tags($artikel->konten);
+                                $paragrafList = preg_split('/\r\n|\r|\n/', $kontenFull);
+                            @endphp
+
+                            @foreach ($paragrafList as $paragraf)
+                                @if (!empty(trim($paragraf)))
+                                    <p>{{ $paragraf }}</p>
+                                @endif
+                            @endforeach
+
+                            @if ($artikel->gambar2)
+                                <img src="{{ asset('storage/' . $artikel->gambar2) }}" alt="Gambar Tambahan" class="detail-image">
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="btn-wrapper" id="btn-wrapper-{{ $artikel->id }}">
+                        <a href="javascript:void(0);" class="btn-artikel" id="btn-{{ $artikel->id }}"
+                           onclick="toggleDetail({{ $artikel->id }})">
+                            Baca Selengkapnya
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
         @endforeach
     </div>
+
+    <!-- Tombol Toggle Semua Artikel -->
+    <div class="btn-wrapper">
+        <a href="javascript:void(0);" class="btn-artikel" id="toggleArtikelBtn" onclick="toggleArtikel()">
+            Baca Semua Artikel
+        </a>
+    </div>
 </section>
 
+<!-- Script Toggle -->
 <script>
-    function openModal(id) {
-        document.getElementById(`modal-${id}`).style.display = 'flex';
+    function toggleDetail(id) {
+        const detail = document.getElementById(`detail-${id}`);
+        const btn = document.getElementById(`btn-${id}`);
+        const isOpen = detail.classList.contains('open');
+
+        detail.classList.toggle('open');
+        btn.textContent = isOpen ? 'Baca Selengkapnya' : 'Tutup';
     }
 
-    function closeModal(e, id) {
-        document.getElementById(`modal-${id}`).style.display = 'none';
+    let semuaArtikelTampil = false;
+
+    function toggleArtikel() {
+        const wrappers = document.querySelectorAll('.artikel-wrapper');
+        const toggleBtn = document.getElementById('toggleArtikelBtn');
+
+        semuaArtikelTampil = !semuaArtikelTampil;
+
+        wrappers.forEach((item, index) => {
+            if (index >= 3) {
+                item.style.display = semuaArtikelTampil ? 'flex' : 'none';
+            }
+        });
+
+        toggleBtn.textContent = semuaArtikelTampil ? 'Tutup Semua Artikel' : 'Baca Semua Artikel';
     }
+
+    // Tampilkan hanya 3 artikel di awal
+    document.addEventListener('DOMContentLoaded', function () {
+        const wrappers = document.querySelectorAll('.artikel-wrapper');
+        wrappers.forEach((item, index) => {
+            if (index >= 3) {
+                item.style.display = 'none';
+            }
+        });
+    });
 </script>
 @endsection

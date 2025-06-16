@@ -36,6 +36,7 @@
                 </div>
             </section>
             <!-- Program PAUD Khairani -->
+            <link rel="stylesheet" href="{{ asset('CSS/kegiatan-blade.css') }}">
             <section class="program">
                 <h2>Program PAUD AL ATHIRAH</h2>
                 <div class="program-cards">
