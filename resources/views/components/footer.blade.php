@@ -1,5 +1,7 @@
+<link rel="stylesheet" href="{{ asset('CSS/footer.css') }}">
+
 <section class="lokasi">
-    <div class="lokasi-container">
+       <div class="lokasi-container">
         <div class="lokasi-map">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2341960447486!2d106.7334205!3d-6.2351344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1d59340cfa7%3A0xc2f0c11c20b11cf5!2sJihan%20DayCare!5e0!3m2!1sen!2sid!4v1688558559684!5m2!1sen!2sid"
@@ -17,8 +19,9 @@
         <a href="#kontak" class="lokasi-btn">Hubungi Kami</a>
         </div>
     </div>
-    </section>
-<footer class="footer">
+</section>
+
+<div class="footer">
     <div class="footer-wave"></div>
 
     <div class="footer-container">
@@ -53,4 +56,7 @@
         </div>
         </div>
     </div>
+</div>
+<footer>
+    <h1>Thanks</h1>
 </footer>

@@ -1,6 +1,8 @@
 @extends('components.layout')
-
+<x-header-img />
 @section('content')
+
+
         <div>     
             <!-- Tentang Kami Section -->
             <section class="tentang-kami">

@@ -16,6 +16,6 @@
                     <li class="masuk"><a href="{{ url('/login') }}">MASUK</a></li>
                     <li class="daftar"><a href="{{ url('/daftar') }}">DAFTAR</a></li>                    
                 </ul>
-            </nav>               <!-- Hero Section -->
+            </nav>               <
         </div>
 </header>

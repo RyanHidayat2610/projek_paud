@@ -1,7 +1,8 @@
 @extends('components.layout')
-
+<x-header-img />
 @section('content')
 <link rel="stylesheet" href="{{ asset('CSS/artikel-blade.css') }}">
+
 <section class="artikel-horizontal">
     <h2>Artikel Edukasi</h2>
     <div class="artikel-container">

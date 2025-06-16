@@ -1,5 +1,5 @@
 @extends('components.layout')
-
+<x-header-img />
 @section('content')
 <link rel="stylesheet" href="{{ asset('CSS/about-blade.css') }}">
 

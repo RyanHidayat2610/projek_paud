@@ -1,18 +1,30 @@
 <section class="hero-section3">
-    <div class="slider-wrapper">
-        <div class="slider-container">
-            <img src="{{ asset('images/bg1.jpg') }}" class="bg-img3">
-            <img src="{{ asset('images/bg2.jpg') }}" class="bg-img3">
-            <img src="{{ asset('images/bg3.jpg') }}" class="bg-img3">
-            <img src="{{ asset('images/bg4.jpg') }}" class="bg-img3">
-            <img src="{{ asset('images/bg5.jpg') }}" class="bg-img3">
-            <img src="{{ asset('images/bg6.jpg') }}" class="bg-img3">
-        </div>
-    </div>
+    @once
+        @push('styles')
+            <link rel="stylesheet" href="{{ asset('CSS/header-img.css') }}">
+        @endpush
+    @endonce
 
-    <div class="hero-section5">
-        <div class="hero-text5">
-            <h1>PAUD AL ATHIRAH</h1>
+    <div class="slider-wrapper" id="slider">
+        <div class="slider-container" id="sliderContainer">
+            @for ($i = 1; $i <= 6; $i++)
+                <div class="slide">
+                    <img src="{{ asset("images/bg$i.jpg") }}" class="bg-img3" alt="Slide {{ $i }}">
+                </div>
+            @endfor
         </div>
+
+        <div class="hero-section5">
+            <div class="hero-text5">
+                <h1>PAUD AL ATHIRAH</h1>
+            </div>
+        </div>
+
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
     </div>
 </section>
+
+@push('scripts')
+<script src="{{ asset('JS/slider.js') }}"></script>
+@endpush

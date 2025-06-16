@@ -1,14 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const sliderContainer = document.querySelector('.slider-container');
-    const slides = document.querySelectorAll('.bg-img3');
+    const slides = document.querySelectorAll(".slide");
+    const container = document.querySelector(".slider-container");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+
+    let currentSlide = 0;
     const totalSlides = slides.length;
-    let currentIndex = 0;
 
-    console.log("Slider initialized with", totalSlides, "slides.");
+    function updateSlider() {
+        // Reset semua slide
+        slides.forEach(slide => slide.classList.remove("active"));
+        // Tampilkan slide aktif
+        slides[currentSlide].classList.add("active");
 
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        sliderContainer.style.transform = `translateX(-${currentIndex * 100}vw)`;
-        console.log("Slide moved to index:", currentIndex);
-    }, 4000);
+        // Geser container (untuk animasi jika tetap ingin pakai transform)
+        container.style.transform = `translateX(-${currentSlide * 100}vw)`;
+    }
+
+    function goToSlide(index) {
+        currentSlide = (index + totalSlides) % totalSlides;
+        updateSlider();
+    }
+
+    prevBtn.addEventListener("click", () => goToSlide(currentSlide - 1));
+    nextBtn.addEventListener("click", () => goToSlide(currentSlide + 1));
+
+    let interval = setInterval(() => goToSlide(currentSlide + 1), 3000);
+
+    document.querySelector(".slider-wrapper").addEventListener("mouseover", () => clearInterval(interval));
+    document.querySelector(".slider-wrapper").addEventListener("mouseout", () => {
+        interval = setInterval(() => goToSlide(currentSlide + 1), 3000);
+    });
+
+    updateSlider();
 });
