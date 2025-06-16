@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormulirAnakController;
+use App\Http\Controllers\ArtikelUserController;
+use App\Http\Controllers\GuruController;
+
+
 
 
 
@@ -51,7 +55,52 @@ Route::get('/formulir-anak', [FormulirAnakController::class, 'create']);
 
 Route::post('/formulir-anak', [FormulirAnakController::class, 'store']);
 
-Route::get('/data-anak', [FormulirAnakController::class, 'DataAnak']);
+// Route::get('/data-anak', [FormulirAnakController::class, 'DataAnak']);
+
+Route::get('/admin/pendaftar', [FormulirAnakController::class, 'DataAnak']);
 
 Route::patch('/anak/{id}/status', [FormulirAnakController::class, 'updateStatus'])->name('anak.updateStatus');
+
+
+
+
+
+Route::get('/admin/home', function () {
+    return view('admin.admin-home', ['title' => 'Halaman Admin']);
+});
+
+Route::get('/admin/about', function () {
+    return view('admin.admin-about', ['title' => 'Admin About']);
+});
+
+Route::get('/admin/artikel', function () {
+    return view('admin.admin-artikel', ['title' => 'Admin Artikel']);
+});
+
+
+
+//Artikel Routes
+// Admin
+Route::prefix('admin')->group(function () {
+    Route::resource('/artikel', App\Http\Controllers\Admin\ArtikelController::class);
+});
+
+// User
+
+Route::get('/artikel', [ArtikelUserController::class, 'index']);
+
+
+// Guru Routes
+
+// Admin - Guru
+Route::prefix('admin/guru')->name('guru.')->group(function () {
+    Route::get('/', [GuruController::class, 'index'])->name('index');
+    Route::post('/', [GuruController::class, 'store'])->name('store');
+    Route::get('/{id}/edit', [GuruController::class, 'edit'])->name('edit');
+    Route::put('/{id}', [GuruController::class, 'update'])->name('update');
+    Route::delete('/{id}', [GuruController::class, 'destroy'])->name('destroy');
+});
+
+// User
+Route::get('/about', [GuruController::class, 'showToUser'])->name('about');
 
