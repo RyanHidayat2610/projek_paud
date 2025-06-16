@@ -6,7 +6,7 @@ use App\Models\FormulirAnak;
 use Illuminate\Http\Request;
 
 class FormulirAnakController extends Controller
-{   
+{
     public function updateStatus(Request $request, $id)
 {
     $anak = Anak::findOrFail($id);
@@ -16,7 +16,7 @@ class FormulirAnakController extends Controller
     return redirect()->back()->with('success', 'Status berhasil diperbarui.');
 }
 
-    
+
     public function DataAnak()
     {
         $data = FormulirAnak::all(); // Ambil semua data anak dari database

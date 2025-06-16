@@ -1,31 +1,12 @@
-<!DOCTYPE html>
-<html lang="id">
-<head >
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-</head>
-<body>
+@extends('components.layout')
 
-    <!-- Header / Navbar -->
-    <header>
-        <div class="container nav-container">
-            <div class="logo">
-                <img src="logo.png" alt="Logo PAUD Khairani">
-                <span>PAUD AL ATHIRAH</span>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ url('/fasilitas') }}">Fasilitas</a></li>
-                    <li><a href="{{ url('/pendaftaran') }}">Pendaftaran</a></li>
-                    <li><a href="{{ url('/about') }}">Tentang Kami</a></li>
-                    <li><a href="{{ url('/artikel') }}">Artikel</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+@section('content')
+        <div>
+                <!-- Hero Section -->
+            <section class="hero">
+                <div class="overlay"></div>
+                <img src="{{ asset('images/bg-paud.jpg') }}" alt="Background" class="bg-img">
+            </section>
 
     <div class="slider">
     <div class="slides">
@@ -48,49 +29,54 @@
                 <h2>Tentang PAUD AL ATHIRAH</h2>
                 <p><strong>PAUD AL ATHIRAH</strong> adalah fasilitas pendidikan anak usia dini yang berkomitmen untuk memberikan lingkungan belajar yang aman, nyaman, dan menyenangkan bagi anak-anak. Kami percaya bahwa setiap anak adalah individu yang istimewa dengan potensi yang sangat besar yang perlu dikembangkan melalui pendidikan yang menyeluruh dan holistik.</p>
 
-            </div>
-        </div>
-    </section>
-    <!-- Kegiatan Unggulan Kami -->
-    <section class="kegiatan">
-        <h2>Kegiatan Kami</h2>
-        <div class="kegiatan-gallery">
-            <div class="kegiatan-item">
-                <img src="{{ asset('images/Kegiatan.1.jpg') }}" alt="Kegiatan 1">
-            </div>
-            <div class="kegiatan-item">
-                <img src="{{ asset('images/Kegiatan.2.jpg') }}" alt="Kegiatan 2">
-            </div>
-            <div class="kegiatan-item">
-                <img src="{{ asset('images/Kegiatan.3.jpg') }}" alt="Kegiatan 3">
-            </div>
-            <div class="kegiatan-item">
-                <img src="{{ asset('images/Kegiatan.4.jpg') }}" alt="Kegiatan 4">
-            </div>
-        </div>
-    </section>
-    <!-- Program PAUD Khairani -->
-    <section class="program">
-        <h2>Program PAUD AL ATHIRAH</h2>
-        <div class="program-cards">
-            <div class="program-card">
-                <div class="program-shape shape-1">
-                    <h3>Belajar Bersama</h3>
-                    <p>Anak-anak antusias mengikuti kegiatan belajar bersama di PAUD kami.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="program-card">
-                <div class="program-shape shape-2" style="background-image: url('makan-bersama.jpg');">
-                    <h3>Makan Bersama</h3>
-                    <p>Anak-anak di PAUD kami menikmati makan siang bersama dalam suasana ceria.</p>
+            </section>
+            <!-- Kegiatan Unggulan Kami -->
+            <section class="kegiatan">
+                <h2>Kegiatan Kami</h2>
+                <div class="kegiatan-gallery">
+                    <div class="kegiatan-item">
+                        <img src="{{ asset('images/Kegiatan.1.jpg') }}" alt="Kegiatan 1">
+                    </div>
+                    <div class="kegiatan-item">
+                        <img src="{{ asset('images/Kegiatan.2.jpg') }}" alt="Kegiatan 2">
+                    </div>
+                    <div class="kegiatan-item">
+                        <img src="{{ asset('images/Kegiatan.3.jpg') }}" alt="Kegiatan 3">
+                    </div>
+                    <div class="kegiatan-item">
+                        <img src="{{ asset('images/Kegiatan.4.jpg') }}" alt="Kegiatan 4">
+                    </div>
                 </div>
-            </div>
-            <div class="program-card">
-                <div class="program-shape shape-3">
-                    <h3>Kunjungan PAUD</h3>
-                    <p>Anak-anak PAUD kami melakukan kunjungan ke berbagai tempat untuk belajar tentang alam, budaya, dan lingkungan.</p>
+            </section>
+            <!-- Program PAUD Khairani -->
+            <section class="program">
+                <h2>Program PAUD AL ATHIRAH</h2>
+                <div class="program-cards">
+                    <div class="program-card">
+                        <div class="program-shape shape-1">
+                            <img src="{{ asset('images/kreatif.jpg') }}" alt="Belajar Bersama" class="hover-img">
+                            <h3>Belajar Bersama</h3>
+                            <p>Anak-anak antusias mengikuti kegiatan belajar bersama di PAUD kami.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-shape shape-2" style="background-image: url('makan-bersama.jpg');">
+                            <img src="{{ asset('images/ngaji.jpg') }}" alt="Mengaji Bersama" class="hover-img">
+                            <h3>Mengaji Bersama</h3>
+                            <p>Anak-anak di PAUD kami mengaji bersama dalam suasana ceria.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-shape shape-3">
+                            <img src="{{ asset('images/sholat.jpg') }}" alt="Sholat Bersama" class="hover-img">
+                            <h3>Sholat Bersama</h3>
+                            <p>Anak-anak PAUD kami melakukan Sholat secara berjamaah.</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
     </section>
     <!-- Lokasi Kami -->

@@ -1,4 +1,4 @@
-@extends('components.layout')
+@extends('admin.admin-components.admin-layout')
 
 @section('content')
         <div>
