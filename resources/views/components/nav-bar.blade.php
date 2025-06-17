@@ -1,4 +1,6 @@
- <header>
+<header>
+<link rel="stylesheet" href="{{ asset('CSS/navbar-blade.css') }}">
+    
         <div class="container nav-container">
             <div class="logo">
                 <img src="logo.png" alt="Logo PAUD Khairani">
@@ -14,6 +16,6 @@
                     <li class="masuk"><a href="{{ url('/login') }}">MASUK</a></li>
                     <li class="daftar"><a href="{{ url('/daftar') }}">DAFTAR</a></li>                    
                 </ul>
-            </nav>
+            </nav>               <
         </div>
 </header>

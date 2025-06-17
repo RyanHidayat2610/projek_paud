@@ -1,4 +1,5 @@
 <header>
+    <link rel="stylesheet" href="{{ asset('CSS/admin-css/admin-navbar.css') }}">
     <div class="container nav-container">
         <div class="logo">
             <img src="logo.png" alt="Logo PAUD Khairani">
@@ -13,5 +14,6 @@
                 <li><a href="{{ url('/admin/artikel') }}">Artikel</a></li>
             </ul>
         </nav>
+
     </div>
 </header>

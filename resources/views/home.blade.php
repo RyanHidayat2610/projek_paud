@@ -1,12 +1,6 @@
 @extends('components.layout')
-
+<x-header-img />
 @section('content')
-        <div>
-                <!-- Hero Section -->
-            <section class="hero">
-                <div class="overlay"></div>
-                <img src="{{ asset('images/bg-paud.jpg') }}" alt="Background" class="bg-img">
-            </section>
 
     <div class="slider">
     <div class="slides">
