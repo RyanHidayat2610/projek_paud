@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.full-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.form-side {
+    flex: 1;
+    background-color: #fff700; /* kuning terang */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.form-box {
+    background-color: #fff9c4; /* kuning lembut */
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.image-side {
+    flex: 1;
+    background: url('../../images/bg-paud.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #0bb457, #97fc79);
+    border: none;
+    border-radius: 25px;
+}
+
+.input-group-text {
+    cursor: pointer;
+}
+
+.text-center a {
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .full-container {
+        flex-direction: column;
+    }
+
+    .image-side {
+        height: 250px;
+        flex: none;
+    }
+}
+.small-link-group a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.small-link-group a:hover {
+    color: #00c61e;
+}
+

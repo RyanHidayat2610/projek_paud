@@ -1,95 +1,107 @@
-<?php
-
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
-use Carbon\Carbon;
-use Illuminate\Support\Str;
-use App\Models\Admin;
-use App\Mail\AdminResetPasswordMail;
 
 
-class AdminAuthController extends Controller
+class AuthController extends Controller
 {
-    
     public function showLoginForm()
     {
-        return view('admin.login');
-    }
-
-    public function login(Request $request)
-    {
-        $credentials = $request->only('username', 'password');
-        $admin = Admin::where('username', $credentials['username'])->first();
-
-        if ($admin && Hash::check($credentials['password'], $admin->password)) {
-            Auth::guard('admin')->login($admin);
-            return redirect('/admin/dashboard');
-        }
-
-        return back()->with('error', 'Username atau password salah.');
+        return view('login'); // resources/views/login.blade.php
     }
 
     public function showResetForm()
     {
-        return view('admin.reset');
+        return view('reset'); // resources/views/reset.blade.php
     }
 
     public function sendResetLink(Request $request)
     {
-        $request->validate(['email' => 'required|email']);
+        $request->validate([
+            'email' => 'required|email',
+        ]);
 
-        $admin = Admin::where('email', $request->email)->first();
-        if (!$admin) {
+        $email = $request->email;
+
+        // Cari admin atau user berdasarkan email
+        $admin = Admin::where('email', $email)->first();
+        $user = User::where('email', $email)->first();
+
+        if (!$admin && !$user) {
             return back()->with('error', 'Email tidak ditemukan.');
         }
 
         $token = Str::random(64);
-        $admin->update([
-            'reset_token' => $token,
-            'reset_token_expiry' => Carbon::now()->addHour(),
-        ]);
+        $expiry = Carbon::now()->addMinutes(60);
 
-        Mail::to($admin->email)->send(new AdminResetPasswordMail($token));
+        if ($admin) {
+            $admin->update([
+                'reset_token' => $token,
+                'reset_token_expiry' => $expiry,
+            ]);
+            $role = 'admin';
+        } else {
+            $user->update([
+                'reset_token' => $token,
+                'reset_token_expiry' => $expiry,
+            ]);
+            $role = 'user';
+        }
 
-        return back()->with('success', 'Tautan reset sandi telah dikirim ke email Anda.');
+        $url = url("/new-password/{$token}?role={$role}");
+
+        Mail::send('emails.reset', ['url' => $url], function ($message) use ($email) {
+            $message->to($email);
+            $message->subject('Reset Kata Sandi');
+        });
+
+        return back()->with('success', 'Tautan reset telah dikirim ke email Anda.');
     }
 
-    public function showNewPasswordForm($token)
+    public function showNewPasswordForm($token, Request $request)
     {
-        $admin = Admin::where('reset_token', $token)
-        ->where('reset_token_expiry', '>', now())
-        ->first();
+        $role = $request->query('role', 'user');
 
-    if (!$admin) {
-        return abort(404, 'Token tidak valid atau sudah kedaluwarsa.');
+        if ($role === 'admin') {
+            $user = Admin::where('reset_token', $token)
+                         ->where('reset_token_expiry', '>', now())
+                         ->first();
+        } else {
+            $user = User::where('reset_token', $token)
+                        ->where('reset_token_expiry', '>', now())
+                        ->first();
+        }
+
+        if (!$user) {
+            return abort(404, 'Token tidak valid atau telah kedaluwarsa.');
+        }
+
+        return view('reset-new-password', compact('token', 'role'));
     }
-
-    return view('admin.new-password', ['token' => $token]);
-}
 
     public function updatePassword(Request $request, $token)
     {
-        $request->validate(['password' => 'required|confirmed|min:6']);
+        $request->validate([
+            'password' => 'required|confirmed|min:6',
+        ]);
 
-        $admin = Admin::where('reset_token', $token)
-                      ->where('reset_token_expiry', '>=', Carbon::now())
-                      ->first();
+        $role = $request->input('role', 'user');
 
-        if (!$admin) {
-            return redirect()->route('admin.reset')->with('error', 'Token tidak valid atau sudah kedaluwarsa.');
+        if ($role === 'admin') {
+            $user = Admin::where('reset_token', $token)->first();
+        } else {
+            $user = User::where('reset_token', $token)->first();
         }
 
-        $admin->update([
+        if (!$user || $user->reset_token_expiry < now()) {
+            return redirect()->route('reset')->with('error', 'Token tidak valid atau telah kedaluwarsa.');
+        }
+
+        $user->update([
             'password' => Hash::make($request->password),
             'reset_token' => null,
             'reset_token_expiry' => null,
         ]);
 
-        return redirect()->route('admin.login')->with('success', 'Sandi berhasil diubah.');
+        $redirectRoute = $role === 'admin' ? '/admin/login' : '/login';
+
+        return redirect($redirectRoute)->with('success', 'Kata sandi berhasil diperbarui.');
     }
-    
 }

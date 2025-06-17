@@ -2,72 +2,75 @@
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Authentication Defaults
-    |--------------------------------------------------------------------------
-    |
-    | This option defines the default authentication "guard" and password
-    | reset "broker" for your application. You may change these values
-    | as required, but they're a perfect start for most applications.
-    |
-    */
-
     'defaults' => [
-    'guard' => env('AUTH_GUARD', 'web'),
-    'passwords' => env('AUTH_PASSWORD_BROKER', 'users'),
-],
-
-'guards' => [
-    'web' => [
-        'driver' => 'session',
-        'provider' => 'users',
+        'guard' => env('AUTH_GUARD', 'web'),
+        'passwords' => env('AUTH_PASSWORD_BROKER', 'users'),
     ],
 
-    'admin' => [
-        'driver' => 'session',
-        'provider' => 'admins',
-    ],
-],
+    'guards' => [
+        // Guard untuk user umum
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
 
-'providers' => [
-    'users' => [
-        'driver' => 'eloquent',
-        'model' => env('AUTH_MODEL', App\Models\User::class),
-    ],
+        // Guard untuk admin
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
 
-    'admins' => [
-        'driver' => 'eloquent',
-        'model' => App\Models\Admin::class,
-    ],
-],
-
-'passwords' => [
-    'users' => [
-        'provider' => 'users',
-        'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
-        'expire' => 60,
-        'throttle' => 60,
+        // Guard tambahan khusus untuk login_user (jika berbeda dengan users)
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
     ],
 
-    'admins' => [
-        'provider' => 'admins',
-        'table' => 'password_reset_tokens', // kamu bisa buat tabel sendiri jika mau
-        'expire' => 60,
-        'throttle' => 60,
-    ],
-],
+    'providers' => [
+        // User umum (default)
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\User::class),
+        ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Password Confirmation Timeout
-    |--------------------------------------------------------------------------
-    |
-    | Here you may define the amount of seconds before a password confirmation
-    | window expires and users are asked to re-enter their password via the
-    | confirmation screen. By default, the timeout lasts for three hours.
-    |
-    */
+        // Admin
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+
+        // Tambahan untuk login_user table
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+    ],
+
+    'passwords' => [
+        'users' => [
+            'provider' => 'users',
+            'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        // Password reset untuk loginuser
+        'users' => [
+            'provider' => 'users',
+            'table' => 'password_reset_tokens', // bisa beda jika ingin
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+    ],
 
     'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),
 

@@ -9,11 +9,9 @@ class Admin extends Authenticatable
     use Notifiable;
 
     protected $table = 'login_admin';
-    public $timestamps = false; // ← ini penting!
+    public $timestamps = false;
 
-    protected $fillable = [
-        'username', 'email', 'password', 'reset_token', 'reset_token_expiry'
-    ];
-
+    protected $fillable = ['username', 'email', 'password', 'reset_token', 'reset_token_expiry'];
     protected $hidden = ['password'];
 }
+

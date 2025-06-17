@@ -55,13 +55,47 @@ Route::get('/data-anak', [FormulirAnakController::class, 'DataAnak']);
 
 Route::patch('/anak/{id}/status', [FormulirAnakController::class, 'updateStatus'])->name('anak.updateStatus');
 
-use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\AuthController;
 
-Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
-Route::post('/admin/login', [AdminAuthController::class, 'login']);
-Route::get('/admin/reset-password', [AdminAuthController::class, 'showResetForm'])->name('admin.reset');
-Route::post('/admin/reset-password', [AdminAuthController::class, 'sendResetLink']);
-Route::get('/admin/reset-password/{token}', [AdminAuthController::class, 'showNewPasswordForm'])->name('admin.reset.form');
-Route::post('/admin/reset-password/{token}', [AdminAuthController::class, 'updatePassword']);
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
+Route::get('/use App\Http\Controllers\adminController;/dashboard', function () {
+    return 'Dashboard Admin';
+})->middleware('auth');
+
+Route::get('/beranda-user', function () {
+    return 'Beranda User';
+})->middleware('auth');
+
+Route::get('/reset-password', [AuthController::class, 'showResetForm'])->name('password.request');
+Route::post('/reset-password', [AuthController::class, 'sendResetLink'])->name('password.email');
+Route::get('/reset-password/{token}', [AuthController::class, 'showNewPasswordForm'])->name('password.reset');
+Route::get('/reset-password/{token}', [AuthController::class, 'showResetForm']);
+Route::post('/reset-password/{token}', [AuthController::class, 'resetPassword']);
+Route::get('/new-password/{token}', [AuthController::class, 'showNewPasswordForm'])->name('new.password.form');
+Route::post('/new-password/{token}', [AuthController::class, 'submitNewPassword'])->name('new.password.submit');
+Route::get('/reset', [AuthController::class, 'showResetForm'])->name('reset.form');
+Route::post('/reset-password', [AuthController::class, 'sendResetLink'])->name('send.reset.link');
+Route::get('/new-password/{token}', [AuthController::class, 'showNewPasswordForm'])->name('password.reset.form');
+Route::post('/new-password/{token}', [AuthController::class, 'updatePassword'])->name('password.update');
+Route::post('/new-password/{token}', [AuthController::class, 'updatePassword'])->name('new.password.submit');
+
+
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
+
+Route::get('/Home', function () {
+    return view('Home');
+})->name('Home');
+
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->middleware('auth');
+
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register.form');
+Route::post('/register', [AuthController::class, 'register'])->name('register');

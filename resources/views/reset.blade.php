@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Reset Sandi Admin</title>
+    <title>Reset Sandi</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('CSS/admin/admin-reset.css') }}">
 </head>
@@ -11,15 +11,18 @@
         <div class="card">
             <h4>Reset Kata Sandi</h4>
 
+            {{-- Pesan Error --}}
             @if (session('error'))
                 <div class="alert alert-danger">{{ session('error') }}</div>
             @endif
 
+            {{-- Pesan Sukses --}}
             @if (session('success'))
                 <div class="alert alert-success">{{ session('success') }}</div>
             @endif
 
-            <form method="POST" action="{{ url('/admin/reset-password') }}">
+            {{-- Form Reset --}}
+            <form method="POST" action="{{ route('send.reset.link') }}">
                 @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label">Alamat Email</label>
@@ -28,13 +31,13 @@
                 <button type="submit" class="btn btn-primary">Kirim Tautan Reset</button>
             </form>
 
-            <a href="{{ route('admin.login') }}">← Kembali ke Login</a>
+            {{-- Link kembali ke login (dinamis berdasarkan role jika disediakan) --}}
+            <a href="{{ route('login') }}">← Kembali ke Login</a>
         </div>
     </div>
 
     <div class="right-image">
         <img src="{{ asset('images/admin/sekolah-login.jpg') }}" alt="Foto Sekolah">
     </div>
-    
 </body>
 </html>
