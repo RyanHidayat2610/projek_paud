@@ -1,8 +1,9 @@
 /* Section Lokasi Kami */
 .lokasi {
-    background-color: #4caf50;
+    background: linear-gradient(to bottom, #facc15, #4caf50);
     color: #fff;
     font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-shadow: 1px 1px 1px #000;
 }
 
 .lokasi-container {
@@ -52,9 +53,19 @@
 
 /* Footer */
 .footer {
-    background-color: #2e7d32;
+    text-shadow: 1px 1px 1px #000;
+    background: linear-gradient(to bottom, #4caf50, #265728);
     color: #fff;
     font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.footer-text {
+    text-align: center;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 16px;
+    margin-bottom: 10px;
+    background-color: #265728;
 }
 
 .footer-container {
@@ -71,6 +82,7 @@
 }
 
 .footer-column h3 {
+    text-shadow: 1px 1px 1px #000;
     color: #ffeb3b;
     font-size: 20px;
     margin-bottom: 15px;

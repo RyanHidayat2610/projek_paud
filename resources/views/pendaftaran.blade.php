@@ -1,19 +1,19 @@
 @extends('components.layout')
 <x-header-img />
 @section('content')
-<link rel="stylesheet" href="{{ asset('CSS/pendaftar-blade.css') }}">
+<link rel="stylesheet" href="{{ asset('CSS/pendaftaran-blade.css') }}">
 
-        <div>
+       
             <!-- Hero Section -->
-            <section class="hero">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h3>PAUD AL ATHIRAH</h3>
-                        <h1>Tempat anak belajar<br> dan bertumbuh</h1>
-                        <p>Segera daftarkan anak Anda!</p>
-                        <a href="/formulir" class="btn-daftar">Daftar</a>
-                    </div>
+            <section class="hero1">
+                <div class="overlay1"></div>
+                <div class="hero-text1">
+                    <h3>PAUD AL ATHIRAH</h3>
+                    <h1>Tempat anak belajar<br> dan bertumbuh <br> Pantekkkkkkk !</h1>
+                    <p>Segera daftarkan anak Anda! <br> Pantekkkkkkk !</p>
+                    <a href="/formulir" class="btn-daftar1">Daftar</a>
                 </div>
-            </section> 
-        </div>
+            </section>
+
+       
 @endsection

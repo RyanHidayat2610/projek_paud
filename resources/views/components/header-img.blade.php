@@ -6,6 +6,7 @@
     @endonce
 
     <div class="slider-wrapper" id="slider">
+        <div class="slide-overlay"></div>
         <div class="slider-container" id="sliderContainer">
             @for ($i = 1; $i <= 6; $i++)
                 <div class="slide">
@@ -16,7 +17,7 @@
 
         <div class="kami">
             <div class="hero-text5">
-                <h1>PAUD AL ATHIRAH</h1>
+                <h1>Pendidikan Anak <br>Usia Dini AL ATHIRAH</h1>
             </div>
         </div>
 

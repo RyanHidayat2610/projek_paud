@@ -5,7 +5,7 @@
         <!-- Kiri: Logo dan Judul -->
         <div class="nav-left">
             <div class="logo">
-                <img src="{{ asset('images/ITH 2 LOGO.png') }}" alt="Logo PAUD Khairani">
+                <img src="{{ asset('images/LOGO.PNG') }}" alt="Logo PAUD Khairani">
                 <span>PAUD AL ATHIRAH</span>
             </div>
         </div>
@@ -22,7 +22,7 @@
                 <li><a href="{{ url('/about') }}">Tentang Kami</a></li>
                 <li><a href="{{ url('/artikel') }}">Artikel</a></li>
                 <li class="masuk"><a href="{{ url('/login') }}">MASUK</a></li>
-                <li class="daftar"><a href="{{ url('/daftar') }}">DAFTAR</a></li>
+                <li class="daftar"><a href="{{ url('/register') }}">DAFTAR</a></li>
             </ul>
         </nav>
     </div>

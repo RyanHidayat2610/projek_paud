@@ -1,6 +1,6 @@
 .profil-guru {
     padding: 60px 20px;
-    background-color: #ffa9a9;
+    background: linear-gradient(to bottom, #a3e635, #facc15);
     text-align: center;
 }
 
@@ -89,4 +89,76 @@
     .modal-konten {
         width: 90%;
     }
+}
+
+.kegiatan {
+    background-color: #4caf50;
+    text-align: center;
+    color: white;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.kegiatan h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.kegiatan-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+}
+
+.kegiatan-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.keterangan-hover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7); /* lebih gelap agar kontras */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px; /* ukuran font diperbesar */
+    font-weight: bold; /* agar lebih tebal */
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease-in-out;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+
+.kegiatan-item:hover .keterangan-hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.kegiatan-item img {
+    width: 100%;
+    border-radius: 15px;
+    border: 5px solid #2e7d32;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.kegiatan-item img:hover {
+    transform: scale(1.05);
+}
+
+.keterangan {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 14px;
 }

@@ -6,6 +6,7 @@
 
     {{-- CSS Utama --}}
     <link rel="stylesheet" href="{{ asset('CSS/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('CSS/pop-up.css') }}">
 
     {{-- Stack CSS tambahan (misal: header-img.css) --}}
     @stack('styles')
@@ -32,7 +33,7 @@
 
     {{-- JS Utama --}}
     <script src="{{ asset('js/slider.js') }}"></script>
-
+    <script src="{{ asset('js/pop-up.js') }}"></script>
     {{-- Stack Script Tambahan --}}
     @stack('scripts')
 </body>

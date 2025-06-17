@@ -15,8 +15,8 @@
         </div>
         <div class="lokasi-info">
         <h2>Lokasi Kami</h2>
-        <p>Lokasi kami berada di JL.Pemuda, tempat penitipan dan pengasuhan anak terpercaya di Pangkep, Sulawesi Selatan. Kami menyediakan layanan penitipan anak yang aman dan edukatif.</p>
-        <a href="#kontak" class="lokasi-btn">Hubungi Kami</a>
+        <p>Lokasi kami berada di JL.Andi Caco, Komp. Perum Tamalakko, Kel.Jagong, Kec.Pangkajene, Kab.Pangkep, Provinsi Sulawesi Selatan tempat penitipan dan pengasuhan anak terpercaya di Pangkep, Sulawesi Selatan. Kami menyediakan layanan penitipan anak yang aman dan edukatif.</p>
+        <a href="https://wa.me/6281340120468" class="lokasi-btn" target="_blank">Hubungi Kami</a>
         </div>
     </div>
 </section>
@@ -44,19 +44,20 @@
 
         <div class="footer-column">
         <h3>Hubungi Kami</h3>
-        <p><i class="fa fa-map-marker-alt"></i> Jl Pemuda, Pangkep, Sulawesi Selatan</p>
+        <p><i class="fa fa-map-marker-alt"></i> Jl.Andi Caco, Komp.Perum Tamalakko, Kel.Jagong, Kec.Pangkajene, Kab.Pangkep, Provinsi Sulawesi Selatan</p>
+        <p><i class="fa fa-phone-alt"></i> atirapaud@gmail.com</p>
         <p><i class="fa fa-phone-alt"></i> +62 81340120468</p>
         <div class="footer-icons">
             <a href="https://wa.me/6281340120468" target="_blank">
-            <img src="whatsapp-icon.png" alt="WhatsApp" />
+            <img src="{{ asset('images/whatsap.png') }}" alt="WhatsApp" />
             </a>
-            <a href="https://instagram.com/" target="_blank">
-            <img src="instagram-icon.png" alt="Instagram" />
+            <a href="mailto:atirapaud@gmail.com" target="_blank">
+            <img src="{{ asset('images/imael.png') }}" alt="Email" />
             </a>
         </div>
         </div>
     </div>
 </div>
-<footer>
-    <h1>Thanks</h1>
+<footer class="footer-text">
+    <h3>DI BUAT OLEH TIM MABAR</h3>
 </footer>
