@@ -17,11 +17,11 @@
     <section class="tentang-kami">
         <div class="tentang-container">
             <div class="tentang-img">
-                <img src="{{ asset('images/Tentang-kami.jpg') }}" alt="Tentang PAUD Khairani">
+                <img src="{{ asset('images/Tentang-kami.png') }}" alt="Tentang PAUD Khairani">
             </div>
             <div class="tentang-text">
                 <h2>Tentang PAUD AL ATHIRAH</h2>
-                <p><strong>PAUD AL ATHIRAH</strong> adalah fasilitas pendidikan anak usia dini yang berkomitmen untuk memberikan lingkungan belajar yang aman, nyaman, dan menyenangkan bagi anak-anak. Kami percaya bahwa setiap anak adalah individu yang istimewa dengan potensi yang sangat besar yang perlu dikembangkan melalui pendidikan yang menyeluruh dan holistik.</p>
+                <p><strong>PAUD AL ATHIRAH</strong> dalah lembaga pendidikan anak usia dini yang berkomitmen menciptakan lingkungan belajar yang aman, nyaman, dan menyenangkan. Kami meyakini bahwa setiap anak adalah individu istimewa dengan potensi besar yang perlu dikembangkan melalui pendidikan holistik. Dengan metode belajar sambil bermain dan nilai-nilai Islami, kami membentuk karakter anak sejak dini melalui kegiatan seperti belajar, mengaji, dan sholat berjamaah. Didukung oleh pendidik profesional, fasilitas lengkap, serta dukungan orang tua, kami siap menjadi rumah kedua bagi anak menuju masa depan yang cerah.</p>
 
                     </div>
                 </div>
@@ -69,12 +69,33 @@
                             <p>Anak-anak PAUD kami melakukan Sholat secara berjamaah.</p>
                         </div>
                     </div>
+                    <div class="program-card">
+                    <div class="program-shape shape-4">
+                        <img src="{{ asset('images/periksa.jpg') }}" alt="Periksa Kesehatan" class="hover-img">
+                        <h3>Pemeriksaan Kesehatan</h3>
+                        <p>Dilakukan pemeriksaan gigi terhadap anak-anak PAUD kami.</p>
+                    </div>
+                    </div>
+                    <div class="program-card">
+                    <div class="program-shape shape-5">
+                        <img src="{{ asset('images/diskusi.jpg') }}" alt="Diskusi Bersama" class="hover-img">
+                        <h3>Diskusi Bersama</h3>
+                        <p>Anak-anak PAUD kami melakukan diskusi terkait pembelajaran.</p>
+                    </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-shape shape-5">
+                            <img src="{{ asset('images/seni.jpg') }}" alt="Kesenian" class="hover-img">
+                            <h3>Kesenian</h3>
+                            <p>Anak-anak PAUD kami menunjukkan baju adat dan budaya.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
     </section>
     <!-- Lokasi Kami -->
-    <section class="lokasi">
+    <!--<section class="lokasi">
     <div class="lokasi-container">
         <div class="lokasi-map">
         <iframe
@@ -89,7 +110,7 @@
         </div>
         <div class="lokasi-info">
         <h2>Lokasi Kami</h2>
-        <p>Lokasi kami berada di JL.Pemuda, tempat penitipan dan pengasuhan anak terpercaya di Pangkep, Sulawesi Selatan. Kami menyediakan layanan penitipan anak yang aman dan edukatif.</p>
+        <p>Lokasi kami berada di JL.Andi Caco, Komp. Perum Tamalakko, Kel.Jagong, Kec.Pangkajene, Kab.Pangkep, Provinsi Sulawesi Selatan tempat penitipan dan pengasuhan anak terpercaya di Pangkep, Sulawesi Selatan. Kami menyediakan layanan penitipan anak yang aman dan edukatif.</p>
         <a href="#kontak" class="lokasi-btn">Hubungi Kami</a>
         </div>
     </div>
@@ -98,7 +119,7 @@
     <footer class="footer">
     <div class="footer-wave"></div>
 
-    <div class="footer-container">
+    <!--div class="footer-container">
         <div class="footer-column">
         <h3>PAUD AL ATHIRAH</h3>
         <p>Didesain dan dikembangkan oleh tim mabar dari Institut Teknologi BJ Habibie dan bekerja sama dengan pihak PAUD AL ATHIRAH.</p>
@@ -129,7 +150,7 @@
             </a>
         </div>
         </div>
-    </div>
+    </!--div-->
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');

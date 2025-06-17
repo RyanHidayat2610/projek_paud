@@ -8,11 +8,11 @@
     <section class="tentang-kami">
         <div class="tentang-container">
             <div class="tentang-img">
-                <img src="{{ asset('images/Tentang-kami.jpg') }}" alt="Tentang PAUD">
+                <img src="{{ asset('images/Tentang-kami.png') }}" alt="Tentang PAUD">
             </div>
             <div class="tentang-text">
                 <h2>Tentang PAUD AL ATHIRAH</h2>
-                <p><strong>PAUD AL ATHIRAH</strong> adalah fasilitas pendidikan anak usia dini yang berkomitmen untuk memberikan lingkungan belajar yang aman, nyaman, dan menyenangkan bagi anak-anak.</p>
+                <p><strong>PAUD AL ATHIRAH</strong> dalah lembaga pendidikan anak usia dini yang berkomitmen menciptakan lingkungan belajar yang aman, nyaman, dan menyenangkan. Kami meyakini bahwa setiap anak adalah individu istimewa dengan potensi besar yang perlu dikembangkan melalui pendidikan holistik. Dengan metode belajar sambil bermain dan nilai-nilai Islami, kami membentuk karakter anak sejak dini melalui kegiatan seperti belajar, mengaji, dan sholat berjamaah. Didukung oleh pendidik profesional, fasilitas lengkap, serta dukungan orang tua, kami siap menjadi rumah kedua bagi anak menuju masa depan yang cerah.</p>
             </div>
         </div>
     </section>
@@ -33,7 +33,49 @@
             @endforeach
         </div>
     </section>
-
+<div>
+    <section class="kegiatan">
+        <h2>Kegiatan Kami</h2>
+        <div class="kegiatan-gallery">
+            <div class="kegiatan-item">
+                <img src="{{ asset('images/kreatif.jpg') }}" alt="Kegiatan 1">
+            </div>
+            <div class="kegiatan-item">
+                <img src="{{ asset('images/ngaji.jpg') }}" alt="Kegiatan 2">
+            </div>
+            <div class="kegiatan-item">
+                <img src="{{ asset('images/sholat.jpg') }}" alt="Kegiatan 3">
+            </div>
+            <div class="kegiatan-item">
+                <img src="{{ asset('images/menggambar.jpg') }}" alt="Kegiatan 4">
+            </div>
+            <div class="kegiatan-item">
+                <img src="{{ asset('images/sholat1.jpg') }}" alt="Kegiatan 4">
+            </div>
+            <div class="kegiatan-item">
+                <img src="{{ asset('images/kreatif2.jpg') }}" alt="Kegiatan 1">
+            </div>
+            <div class="kegiatan-item">
+                <img src="{{ asset('images/sholat2.jpg') }}" alt="Kegiatan 1">
+            </div>
+            <div class="kegiatan-item">
+                <img src="{{ asset('images/ngaji1.jpg') }}" alt="Kegiatan 1">
+            </div>
+            <div class="kegiatan-item">
+                <img src="{{ asset('images/belajar.jpg') }}" alt="Kegiatan 1">
+            </div>
+            <div class="kegiatan-item">
+                <img src="{{ asset('images/belajar1.jpg') }}" alt="Kegiatan 1">
+            </div>
+            <div class="kegiatan-item">
+                <img src="{{ asset('images/kunjung.jpg') }}" alt="Kegiatan 1">
+            </div>
+            <div class="kegiatan-item">
+                <img src="{{ asset('images/kunjung2.jpg') }}" alt="Kegiatan 1">
+            </div>
+        </div>
+    </section>
+</div>
     <!-- Modal Gambar -->
     <div id="modalGambar" class="modal-gambar">
         <span class="tutup" onclick="tutupModal()">&times;</span>
