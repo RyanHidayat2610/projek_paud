@@ -22,7 +22,6 @@
             <div class="tentang-text">
                 <h2>Tentang PAUD AL ATHIRAH</h2>
                 <p><strong>PAUD AL ATHIRAH</strong> dalah lembaga pendidikan anak usia dini yang berkomitmen menciptakan lingkungan belajar yang aman, nyaman, dan menyenangkan. Kami meyakini bahwa setiap anak adalah individu istimewa dengan potensi besar yang perlu dikembangkan melalui pendidikan holistik. Dengan metode belajar sambil bermain dan nilai-nilai Islami, kami membentuk karakter anak sejak dini melalui kegiatan seperti belajar, mengaji, dan sholat berjamaah. Didukung oleh pendidik profesional, fasilitas lengkap, serta dukungan orang tua, kami siap menjadi rumah kedua bagi anak menuju masa depan yang cerah.</p>
-
                     </div>
                 </div>
             </section>
@@ -32,15 +31,19 @@
                 <div class="kegiatan-gallery">
                     <div class="kegiatan-item">
                         <img src="{{ asset('images/Kegiatan.1.jpg') }}" alt="Kegiatan 1">
+                        <div class="keterangan-hover">Belajar di Kelas</div>
                     </div>
                     <div class="kegiatan-item">
                         <img src="{{ asset('images/Kegiatan.2.jpg') }}" alt="Kegiatan 2">
+                        <div class="keterangan-hover">Baris Sebelum Masuk Kelas</div>
                     </div>
                     <div class="kegiatan-item">
                         <img src="{{ asset('images/Kegiatan.3.jpg') }}" alt="Kegiatan 3">
+                        <div class="keterangan-hover">Bermain di Taman</div>
                     </div>
                     <div class="kegiatan-item">
                         <img src="{{ asset('images/Kegiatan.4.jpg') }}" alt="Kegiatan 4">
+                        <div class="keterangan-hover">Bermain Bersama</div>
                     </div>
                 </div>
             </section>

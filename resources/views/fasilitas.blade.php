@@ -15,6 +15,54 @@
                     </div>
                 </div>
             </section>
-
+            <section class="program">
+                <h2>Fasilitas PAUD AL ATHIRAH</h2>
+                <div class="program-cards">
+                    <div class="program-card">
+                        <div class="program-shape shape-1">
+                            <img src="{{ asset('images/tempat.jpg') }}" alt="Belajar Bersama" class="hover-img">
+                            <h3>Tempat Belajar Nyaman</h3>
+                            <p>Anak-anak antusias mengikuti kegiatan belajar bersama di PAUD kami.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-shape shape-2" style="background-image: url('makan-bersama.jpg');">
+                            <img src="{{ asset('images/ngaji.jpg') }}" alt="Mengaji Bersama" class="hover-img">
+                            <h3>Tempat Mengaji Bersama</h3>
+                            <p>Anak-anak di PAUD kami mengaji bersama dalam suasana ceria.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-shape shape-3">
+                            <img src="{{ asset('images/sholat.jpg') }}" alt="Sholat Bersama" class="hover-img">
+                            <h3>Ruang Sholat Bersama</h3>
+                            <p>Anak-anak PAUD kami melakukan Sholat secara berjamaah.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                    <div class="program-shape shape-4">
+                        <img src="{{ asset('images/main.jpg') }}" alt="Taman Bermain" class="hover-img">
+                        <h3>Taman Bermain</h3>
+                        <p>Anak-anak PAUD kami bermain di taman yang aman dan menyenangkan.</p>
+                    </div>
+                    </div>
+                    <div class="program-card">
+                    <div class="program-shape shape-5">
+                        <img src="{{ asset('images/diskus.jpg') }}" alt="Diskusi Bersama" class="hover-img">
+                        <h3>Ruang Diskusi Bersama</h3>
+                        <p>Anak-anak PAUD kami melakukan diskusi terkait pembelajaran.</p>
+                    </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-shape shape-5">
+                            <img src="{{ asset('images/seni.jpg') }}" alt="Kesenian" class="hover-img">
+                            <h3>Ruang Kesenian</h3>
+                            <p>Anak-anak PAUD kami menunjukkan baju adat dan budaya.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
         </div>
 @endsection

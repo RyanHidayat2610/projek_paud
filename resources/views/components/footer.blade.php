@@ -59,5 +59,5 @@
     </div>
 </div>
 <footer>
-    <h1>Thanks</h1>
+    <h3>Disusun Oleh Tim Mabar</h3>
 </footer>

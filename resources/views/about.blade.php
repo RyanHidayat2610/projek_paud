@@ -39,39 +39,51 @@
         <div class="kegiatan-gallery">
             <div class="kegiatan-item">
                 <img src="{{ asset('images/kreatif.jpg') }}" alt="Kegiatan 1">
+                <div class="keterangan-hover">Kegiatan Kreatif</div>
             </div>
             <div class="kegiatan-item">
                 <img src="{{ asset('images/ngaji.jpg') }}" alt="Kegiatan 2">
+                <div class="keterangan-hover">Kegiatan Ngaji</div>
             </div>
             <div class="kegiatan-item">
                 <img src="{{ asset('images/sholat.jpg') }}" alt="Kegiatan 3">
+                <div class="keterangan-hover">Kegiatan Sholat</div>
             </div>
             <div class="kegiatan-item">
                 <img src="{{ asset('images/menggambar.jpg') }}" alt="Kegiatan 4">
+                <div class="keterangan-hover">Kegiatan Menggambar</div>
             </div>
             <div class="kegiatan-item">
                 <img src="{{ asset('images/sholat1.jpg') }}" alt="Kegiatan 4">
+                <div class="keterangan-hover">Kegiatan Sholat</div>
             </div>
             <div class="kegiatan-item">
                 <img src="{{ asset('images/kreatif2.jpg') }}" alt="Kegiatan 1">
+                <div class="keterangan-hover">Kegiatan Kreatif</div>
             </div>
             <div class="kegiatan-item">
                 <img src="{{ asset('images/sholat2.jpg') }}" alt="Kegiatan 1">
+                <div class="keterangan-hover">Kegiatan Sholat</div>
             </div>
             <div class="kegiatan-item">
                 <img src="{{ asset('images/ngaji1.jpg') }}" alt="Kegiatan 1">
+                <div class="keterangan-hover">Kegiatan Ngaji</div>
             </div>
             <div class="kegiatan-item">
                 <img src="{{ asset('images/belajar.jpg') }}" alt="Kegiatan 1">
+                <div class="keterangan-hover">Kegiatan Belajar</div>
             </div>
             <div class="kegiatan-item">
                 <img src="{{ asset('images/belajar1.jpg') }}" alt="Kegiatan 1">
+                <div class="keterangan-hover">Kegiatan Belajar</div>
             </div>
             <div class="kegiatan-item">
                 <img src="{{ asset('images/kunjung.jpg') }}" alt="Kegiatan 1">
+                <div class="keterangan-hover">Kegiatan Kunjungan</div>
             </div>
             <div class="kegiatan-item">
                 <img src="{{ asset('images/kunjung2.jpg') }}" alt="Kegiatan 1">
+                <div class="keterangan-hover">Kegiatan Kunjungan</div>
             </div>
         </div>
     </section>
