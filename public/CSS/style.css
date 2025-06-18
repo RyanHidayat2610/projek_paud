@@ -40,11 +40,7 @@ section,
 /* ========================== */
 /* SECTION: TENTANG KAMI */
 /* ========================== */
-.tentang-kami {
-    margin-top: -280px;
-    background: linear-gradient(to bottom, #facc15, #a3e635);
 
-}
 
 .tentang-container {
     max-width: 1100px;
@@ -68,12 +64,7 @@ section,
     max-width: 500px;
 }
 
-.tentang-text h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-    font-family: 'Comic Sans MS', sans-serif;
-    color: #222;
-}
+
 
 .tentang-text p {
     font-size: 20px;
@@ -102,10 +93,11 @@ section,
 /* SECTION: KEGIATAN */
 /* ========================== */
 .kegiatan {
-    background: linear-gradient(to bottom, #facc15, #a3e635);
+    background: linear-gradient(to bottom,#0a846b,#0a846b);
     text-align: center;
-    color: white;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    
 }
 
 .kegiatan h2 {
@@ -130,7 +122,7 @@ section,
 .kegiatan-item img {
     width: 100%;
     border-radius: 15px;
-    border: 5px solid #2e7d32;
+    border: 5px solid #ffffff9f !important;
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
 }
@@ -181,14 +173,13 @@ section,
 /* SECTION: PROGRAM */
 /* ========================== */
 .program {
-    background: linear-gradient(to bottom, #a8e063, #f7dc6f);
+    background: linear-gradient(to bottom,#0a846b, #076653,  #0c342c);
     text-align: center;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    
 }
 
 .program h2 {
     font-size: 32px;
-    color: #fff;
     margin-bottom: 50px;
     padding-top: 40px;
 }
@@ -198,6 +189,8 @@ section,
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
+    padding: 50px;
+    padding-bottom: 200px;
 }
 
 .program-card {
@@ -421,12 +414,7 @@ section,
     align-items: center;
 }
 
-.artikel-horizontal h2 {
-    font-size: 32px;
-    color: #006e51;
-    margin-bottom: 30px;
-    font-family: 'Comic Sans MS', sans-serif;
-}
+
 
 .artikel-container {
     display: flex;

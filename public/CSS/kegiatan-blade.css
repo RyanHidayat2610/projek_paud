@@ -14,7 +14,8 @@
     justify-content: flex-start center;
 
     padding-left: 5%;
-    background-color: #facc15; /* fallback bg */
+
+    background: linear-gradient(to bottom, #fffdee,#e3ef26,#0a846b);; /* fallback bg */
 
 }
 
@@ -25,12 +26,21 @@
     line-height: 1.2;
 }
 .paudd {
+    font-size: 4rem !important;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 3px #000000;
+    color: #ffffff;
+    padding-bottom: 50px;
+}
+
+.paudd1 {
     font-size: 2rem;
     margin-bottom: 1rem;
     font-weight: bold;
     margin-bottom: 3rem;
 }
-
 
 .pauddd {
     font-size: 3rem;
@@ -58,3 +68,119 @@
         transform: translateY(0);
     }
 }
+
+/* ========================== */
+/* SECTION: PROGRAM */
+/* ========================== */
+.program-section {
+    background: linear-gradient(to bottom, #0a846b, #076653, #0c342c);
+    padding: 50px 5vw 150px; /* Menggunakan vw agar adaptif */
+    text-align: center;
+}
+
+.program-title {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    color: #fff;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.program-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto; /* Tengah secara horizontal */
+}
+
+.program-item {
+    flex: 1 1 calc(50% - 40px); /* Lebar item menyesuaikan dengan gap */
+    max-width: 560px; /* Lebar maksimal */
+    height: 80vh;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #a7ffaa;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    min-width: 280px; /* Supaya tidak terlalu kecil saat resolusi aneh */
+}
+
+.program-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+.program-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-top: 56.25%; /* Aspek rasio tetap */
+}
+
+.program-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.program-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    z-index: 2;
+    text-align: left;
+    border-radius: 0 0 20px 20px;
+}
+
+.program-overlay h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.program-overlay p {
+    font-size: 1.2rem;
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+    .program-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .program-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .program-title {
+        font-size: 2rem;
+    }
+}
+
+.btn-program12 {
+    margin-top: 40px;
+    background-color: #5d3c00;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn-program12:hover {
+    background-color: #3e2800;
+}
+

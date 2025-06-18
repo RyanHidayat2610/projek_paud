@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="{{ asset('CSS/admin-css/admin-navbar.css') }}">
     <div class="container nav-container">
         <div class="logo">
-            <img src="logo.png" alt="Logo PAUD Khairani">
+            <img src="{{ asset('images/LOGO.PNG') }}" alt="Foto Sekolah">
             <span>ADMIN PAUD AL ATHIRAH</span>
         </div>
 

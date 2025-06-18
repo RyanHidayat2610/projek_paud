@@ -49,10 +49,10 @@
         <p><i class="fa fa-phone-alt"></i> +62 81340120468</p>
         <div class="footer-icons">
             <a href="https://wa.me/6281340120468" target="_blank">
-            <img src="{{ asset('images/whatsap.png') }}" alt="WhatsApp" />
+            <img src="{{ asset('images/whatsapp.png') }}" alt="WhatsApp" />
             </a>
             <a href="mailto:atirapaud@gmail.com" target="_blank">
-            <img src="{{ asset('images/imael.png') }}" alt="Email" />
+            <img src="{{ asset('images/email.png') }}" alt="Email" />
             </a>
         </div>
         </div>
@@ -60,4 +60,10 @@
 </div>
 <footer class="footer-text">
     <h3>DI BUAT OLEH TIM MABAR</h3>
+    {{-- resources/views/components/modal-gambar.blade.php --}}
+<div id="modalGambar" class="modal-gambar">
+    <span class="tutup" onclick="tutupModal()">&times;</span>
+    <img class="modal-konten" id="gambarPerbesar">
+</div>
+
 </footer>

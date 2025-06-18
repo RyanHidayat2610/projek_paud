@@ -1,3 +1,4 @@
 body {
-    background-color: hotpink;
+    background-color: rgb(208, 208, 208);
+    background: linear-gradient(to bottom,#fffdee ,#e2fbce, #e3ef26, #076653, #0c342c, #06231d);
 }

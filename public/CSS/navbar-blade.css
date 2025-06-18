@@ -7,15 +7,7 @@ body {
 }
 
 /* === HEADER FIXED === */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
 
-
-}
 
 /* === NAV CONTAINER FLEX === */
 .nav-container {
@@ -48,7 +40,7 @@ header {
 .logo span {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #2e9c5f;
+    color: #ffffff;
 }
 
 /* === MENU SECTION KANAN === */
@@ -59,7 +51,6 @@ header {
     gap: 20px;
     margin: 0;
     padding: 0;
-    text-shadow: 1px 2px 2px #424242;
 }
 
 .nav-right ul li a {
@@ -73,13 +64,15 @@ header {
 }
 
 /* === HOVER NAV ITEM === */
-.nav-right ul li a:hover {
+.ikan:hover {
+    color: black !important ;
     padding: 15px 25px;
-    background-color: #2e9c5f;
+    background-color: #ffffff;
     font-size: 1.1rem;
-    color: white;
     transform: translateY(-2px);
+    border-radius: 40px;
 }
+
 
 /* === MASUK & DAFTAR SPECIAL STYLE === */
 .nav-right ul li.masuk a,
@@ -141,4 +134,53 @@ header {
 /* === LOGO INTERAKTIF === */
 .logo img:hover {
     transform: scale(1.05) rotate(-1deg);
+}
+
+
+
+/* Style untuk navbar transparan */
+header.transparent {
+    background: transparent !important;
+    box-shadow: none !important;
+    transition: all 0.3s ease;
+}
+
+/* Style untuk navbar solid (saat di-scroll) */
+header.solid {
+    background: rgba(0, 0, 0, 0.196) !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Efek easing lebih halus */
+}
+
+header.transparent {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+header.solid {
+    background: rgba(0, 0, 0, 0.95) !important; /* Sedikit transparan */
+    backdrop-filter: blur(8px); /* Efek blur modern */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease, backdrop-filter 0.5s ease; /* Transisi terpisah */
+}
+
+/* Warna teks saat navbar transparan */
+header.transparent .logo span,
+header.transparent nav ul li:not(.masuk):not(.daftar) a {
+    color: #ffffff;
+}
+
+/* Warna tombol khusus tetap sama */
+header.transparent nav ul li.masuk a,
+header.transparent nav ul li.daftar a {
+    color: #006e51;
+    background-color: white;
+    
 }

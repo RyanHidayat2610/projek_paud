@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="left-image">
-        <img src="{{ asset('images/admin/sekolah-login.jpg') }}" alt="Foto Sekolah">
+        <img src="{{ asset('images/bg1.jpg') }}" alt="Foto Sekolah">
     </div>
 
     <div class="right-form">

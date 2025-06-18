@@ -2,17 +2,28 @@
 <x-header-img />
 @section('content')
 <link rel="stylesheet" href="{{ asset('CSS/artikel-blade.css') }}">
-
+<link rel="stylesheet" href="{{ asset('CSS/kegiatan-blade.css') }}">
+            
+            <section class="hero1">
+                <div class="overlay1"></div>
+                <div class="hero-text1">
+                    <h2 class="pauddd">Selamat Datang di Website Resmi</h2>
+                    <h1 class="paud">PAUD AL-ATHIRAH</h1>                    
+                    <h2 class="paudd1">Tempat anak belajar dan bertumbuh</h2>
+                    <p>Halo Ayah, Bunda, dan Ananda tercinta! <br>Dapatkan informasi dan wawasan seputar dunia anak usia dini melalui berbagai artikel menarik dari PAUD AL-ATHIRAH. 
+                    Kami berbagi tips, inspirasi, serta pengetahuan yang bermanfaat bagi orang tua dan pendidik dalam mendampingi tumbuh kembang anak.</p>
+                </div>
+            </section>
 <!-- Artikel Section -->
 <section class="artikel-horizontal">
-    <h2>Artikel Edukasi</h2>
+    <h2 class="artikel1">Artikel Edukasi</h2>
     <div class="artikel-container">
         @foreach ($artikels as $index => $artikel)
         <div class="artikel-wrapper">
             <div class="artikel-item">
                 @if ($artikel->gambar1)
                 <div class="artikel-images">
-                    <img src="{{ asset('storage/' . $artikel->gambar1) }}" alt="Gambar Artikel">
+                    <img src="{{ asset('storage/' . $artikel->gambar1) }}" alt="Gambar Artikel" onclick="tampilkanGambar(this)" class="popup-img">
                 </div>
                 @endif
 
@@ -34,7 +45,7 @@
                             @endforeach
 
                             @if ($artikel->gambar2)
-                                <img src="{{ asset('storage/' . $artikel->gambar2) }}" alt="Gambar Tambahan" class="detail-image">
+                                <img src="{{ asset('storage/' . $artikel->gambar2) }}" alt="Gambar Tambahan" class="detail-image"  onclick="tampilkanGambar(this)" class="popup-img">
                             @endif
                         </div>
                     </div>

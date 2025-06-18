@@ -1,7 +1,7 @@
 /* Hero Section */
 body {
     margin: 0;
-    background-color: #d3ffd2;
+    background: linear-gradient(to bottom,#e2fbce,#076653, #0c342c, #0c342c);
 }
 .hero-section1 {
     position: relative;
@@ -48,12 +48,14 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 30px;
-    background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     transform: translateY(-50px);
     position: relative;
     z-index: 2;
+    background-color: #ffffff;
+    margin-bottom: 200px;
+    
 }
 
 /* Tabel Persyaratan */

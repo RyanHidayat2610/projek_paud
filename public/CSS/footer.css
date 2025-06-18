@@ -1,9 +1,9 @@
 /* Section Lokasi Kami */
 .lokasi {
-    background: linear-gradient(to bottom, #facc15, #4caf50);
+    background: linear-gradient(to bottom, #0c342c, #06231d);
     color: #fff;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
     text-shadow: 1px 1px 1px #000;
+    padding-bottom: 100px;
 }
 
 .lokasi-container {
@@ -54,9 +54,9 @@
 /* Footer */
 .footer {
     text-shadow: 1px 1px 1px #000;
-    background: linear-gradient(to bottom, #4caf50, #265728);
+    background: linear-gradient(to bottom, #06231d, #06231d);
     color: #fff;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    padding-bottom: 100px;
 }
 
 .footer-text {

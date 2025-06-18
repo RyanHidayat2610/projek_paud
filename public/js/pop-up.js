@@ -13,13 +13,13 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.display = "none";
     }
 
+    if (closeBtn) {
+        closeBtn.addEventListener("click", tutupModal);
+    }
+
     window.addEventListener("click", function (event) {
         if (event.target === modal) {
             tutupModal();
         }
     });
-
-    if (closeBtn) {
-        closeBtn.addEventListener("click", tutupModal);
-    }
 });
