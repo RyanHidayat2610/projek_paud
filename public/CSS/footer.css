@@ -119,6 +119,9 @@
     width: 35px;
     margin-right: 10px;
     transition: transform 0.3s;
+    background-color: #fff;
+    border-radius: 20%;
+    padding: 2px;
 }
 
 .footer-icons img:hover {
