@@ -18,7 +18,7 @@ class AuthController extends Controller
     
     public function showLoginForm()
 {
-    return view('login'); // Pastikan file ini ada di resources/views/login.blade.php
+    return view('login'); 
 }
     public function showResetForm()
     {
@@ -113,16 +113,21 @@ class AuthController extends Controller
     $admin = \App\Models\Admin::where('username', $username)->first();
     if ($admin && \Hash::check($password, $admin->password)) {
         session(['user_id' => $admin->id, 'role' => 'admin']);
-        return redirect('/admin/dashboard');
+        return redirect('/admin/home');
     }
 
     // Cek User
     $user = \App\Models\User::where('username', $username)->first();
     if ($user && \Hash::check($password, $user->password)) {
-        session(['user_id' => $user->id, 'role' => 'user']);
+        session(['user_id' => $user->id_user, 'role' => 'user']);
         return redirect('/Home');
     }
+    if ($user && Hash::check($credentials['password'], $user->password)) {
+        Session::put('login', true);
+        Session::put('username', $user->username); 
 
+        return redirect('/home');
+    }
     // Gagal login
     return back()->with('error', 'Username atau password salah.');
 }
@@ -141,13 +146,49 @@ public function register(Request $request)
     ]);
 
     // Simpan user baru
-    User::create([
+    $user = User::create([
         'username' => $request->username,
         'email' => $request->email,
         'password' => Hash::make($request->password),
     ]);
 
+    // login otomatis
+    session(['user_id' => $user->id_user, 'role' => 'user']);
+
+    // jika sebelumnya diarahkan dari tombol formulir, arahkan kembali ke formulir
+    if (session()->has('redirect_to_formulir')) {
+        session()->forget('redirect_to_formulir');
+        return redirect('/formulir')->with('success', 'Akun berhasil dibuat. Silakan isi formulir.');
+    }
+
+    // jika tidak, arahkan ke login
     return redirect()->route('login')->with('success', 'Akun berhasil dibuat, silakan login.');
+}
+
+
+    public function logout(Request $request)
+{
+    session()->flush(); 
+    return redirect('/home')->with('success', 'Berhasil keluar');
+
+    $role = session('role');
+    session()->flush();
+
+    if ($role === 'admin') {
+        return redirect('/admin/login')->with('success', 'Admin berhasil logout.');
+    }
+
+    return redirect('/login')->with('success', 'Anda berhasil logout.');
+}
+    public function showMyData()
+{
+    $username = Session::get('username');
+    $data = FormulirAnak::where('username', $username)->get();
+
+    return view('user.data-anak', [
+        'data' => $data,
+        'title' => 'Data Anak Anda'
+    ]);
 }
 
 }

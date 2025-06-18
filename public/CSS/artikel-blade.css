@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ff92eb;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero .bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(255,255,255,0.1));
+}
+
+.artikel-horizontal {
+    padding: 50px 5%;
+    text-align: center;
+    margin-top: -280px;
+    background: rgba(255, 45, 45, 0.8);
+}
+
+.artikel-horizontal h2 {
+    margin-bottom: 30px;
+    font-size: 2em;
+    color: #333;
+}
+
+.artikel-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.artikel-wrapper {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.artikel-item {
+    display: flex;
+    gap: 20px;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artikel-item:hover {
+    transform: scale(1.03) translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.artikel-images img {
+    width: 160px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.artikel-content {
+    flex: 1;
+    text-align: left;
+}
+
+.artikel-content h3 {
+    margin: 0;
+    font-size: 1.4em;
+    color: #222;
+}
+
+.artikel-content p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.tanggal-artikel {
+    display: block;
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.btn-artikel {
+    display: inline-block;
+    background-color: #2e9c5f;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-artikel:hover {
+    background-color: #217746;
+}
+
+.artikel-detail {
+    display: inline-block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+}
+
+.artikel-detail.open {
+    max-height: 2000px;
+}
+
+.artikel-detail .detail-inner {
+    padding-top: 10px;
+}
+
+/* Gambar kedua tampil penuh */
+.detail-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.btn-wrapper {
+    margin-top: 10px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .artikel-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .artikel-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .artikel-images img {
+        width: 100%;
+        height: auto;
+    }
+}

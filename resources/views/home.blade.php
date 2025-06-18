@@ -1,25 +1,21 @@
 @extends('components.layout')
-
+<x-header-img />
 @section('content')
-        <div>
-                <!-- Hero Section -->
-            <section class="hero">
-                <div class="overlay"></div>
-                <img src="{{ asset('images/bg-paud.jpg') }}" alt="Background" class="bg-img">
-            </section>
-            <!-- Tentang Kami Section -->
-            <section class="tentang-kami">
-                <div class="tentang-container">
-                    <div class="tentang-img">
-                        <img src="{{ asset('images/Tentang-kami.jpg') }}" alt="Tentang PAUD Khairani">
-                    </div>
-                    <div class="tentang-text">
-                        <h2>Tentang PAUD AL ATHIRAH</h2>
-                        <p><strong>PAUD AL ATHIRAH</strong> adalah fasilitas pendidikan anak usia dini yang berkomitmen untuk memberikan lingkungan belajar yang aman, nyaman, dan menyenangkan bagi anak-anak. Kami percaya bahwa setiap anak adalah individu yang istimewa dengan potensi yang sangat besar yang perlu dikembangkan melalui pendidikan yang menyeluruh dan holistik.</p>
 
-                    </div>
+
+            <!-- Tentang Kami Section -->
+            <section class="hero1">
+                <div class="overlay1"></div>
+                <div class="hero-text1">
+                    <h2 class="pauddd">Selamat Datang di Website Resmi</h2>
+                    <h1 class="paud">PAUD AL-ATHIRAH</h1>                    
+                    <h2 class="paudd">Tempat anak belajar dan bertumbuh</h2>
+                    <p>Halo Ayah, Bunda, dan Ananda tercinta! <br>Selamat datang di PAUD Al-Qur'an Al-Athirah. 
+                    Di sini, kami percaya bahwa setiap anak unik dan istimewa. Melalui kegiatan belajar yang kreatif dan penuh cinta, kami siap menemani langkah kecil mereka menuju masa depan gemilang.</p>
                 </div>
             </section>
+
+
             <!-- Kegiatan Unggulan Kami -->
             <section class="kegiatan">
                 <h2>Kegiatan Kami</h2>
@@ -39,6 +35,7 @@
                 </div>
             </section>
             <!-- Program PAUD Khairani -->
+            <link rel="stylesheet" href="{{ asset('CSS/kegiatan-blade.css') }}">
             <section class="program">
                 <h2>Program PAUD AL ATHIRAH</h2>
                 <div class="program-cards">
@@ -63,7 +60,29 @@
                             <p>Anak-anak PAUD kami melakukan Sholat secara berjamaah.</p>
                         </div>
                     </div>
+                    <div class="program-card">
+                    <div class="program-shape shape-4">
+                        <img src="{{ asset('images/periksa.jpg') }}" alt="Periksa Kesehatan" class="hover-img">
+                        <h3>Pemeriksaan Kesehatan</h3>
+                        <p>Dilakukan pemeriksaan gigi terhadap anak-anak PAUD kami.</p>
+                    </div>
+                    </div>
+                    <div class="program-card">
+                    <div class="program-shape shape-5">
+                        <img src="{{ asset('images/diskusi.jpg') }}" alt="Diskusi Bersama" class="hover-img">
+                        <h3>Diskusi Bersama</h3>
+                        <p>Anak-anak PAUD kami melakukan diskusi terkait pembelajaran.</p>
+                    </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-shape shape-5">
+                            <img src="{{ asset('images/seni.jpg') }}" alt="Kesenian" class="hover-img">
+                            <h3>Kesenian</h3>
+                            <p>Anak-anak PAUD kami menunjukkan baju adat dan budaya.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
+
         </div>
 @endsection

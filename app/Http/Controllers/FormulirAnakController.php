@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\FormulirAnak;
 use Illuminate\Http\Request;
 
+
 class FormulirAnakController extends Controller
 {   
     public function updateStatus(Request $request, $id)
@@ -19,48 +20,55 @@ class FormulirAnakController extends Controller
     
     public function DataAnak()
     {
-        $data = FormulirAnak::all(); // Ambil semua data anak dari database
-        return view('data-anak', compact('data'));
-    }
+        $data = FormulirAnak::all(); 
+        return view('admin.admin-pendaftar', [
+            'data' => $data,
+            'title' => 'Admin Pendaftar'
+        ]);
 
+    }
 
     public function create()
     {
         return view('formulir.create');
     }
 
-    public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'nama' => 'required',
-            'tempat_lahir' => 'required',
-            'tanggal_lahir' => 'required|date',
-            'gender' => 'required|in:Laki-laki,Perempuan',
-            'agama' => 'required',
-            'hobi' => 'nullable',
-            'nama_ayah' => 'required',
-            'nama_ibu' => 'required',
-            'jarak_rumah' => 'required',
-            'foto_akte' => 'nullable|mimes:jpg,jpeg,png,pdf|max:10240',
-            'foto_kk' => 'nullable|mimes:jpg,jpeg,png,pdf|max:10240',
-        ]);
+public function store(Request $request)
+{
+ $request->validate([
+        'nama' => 'required|string|max:255',
+        'tempat_lahir' => 'required',
+        'tanggal_lahir' => 'required|date',
+        'gender' => 'required',
+        'agama' => 'required',
+        'hobi' => 'nullable',
+        'nama_ayah' => 'required',
+        'nama_ibu' => 'required',
+        'jarak_rumah' => 'required',
+        'foto_akte' => 'file|mimes:jpg,jpeg,png,pdf|max:2048',
+        'foto_kk' => 'file|mimes:jpg,jpeg,png,pdf|max:2048',
+    ]);
 
-        // Handle file uploads
-        if ($request->hasFile('foto_akte')) {
-            $validated['foto_akte'] = $request->file('foto_akte')->store('akte', 'public');
-        }
+    // Simpan file
+    $aktePath = $request->file('foto_akte')->store('uploads/akte', 'public');
+    $kkPath = $request->file('foto_kk')->store('uploads/kk', 'public');
 
-        if ($request->hasFile('foto_kk')) {
-            $validated['foto_kk'] = $request->file('foto_kk')->store('kk', 'public');
-        }
+    \App\Models\FormulirAnak::create([
+        'id_user' => session('user_id'), // ✅ ambil dari session
+        'nama' => $request->nama,
+        'tempat_lahir' => $request->tempat_lahir,
+        'tanggal_lahir' => $request->tanggal_lahir,
+        'gender' => $request->gender,
+        'agama' => $request->agama,
+        'hobi' => $request->hobi,
+        'nama_ayah' => $request->nama_ayah,
+        'nama_ibu' => $request->nama_ibu,
+        'jarak_rumah' => $request->jarak_rumah,
+        'foto_akte' => $aktePath,
+        'foto_kk' => $kkPath,
+    ]);
 
-        $saved = FormulirAnak::create($validated);
-            if ($saved) {
-                return redirect()->back()->with('success', 'Formulir berhasil disimpan.');
-            } else {
-                \Log::error('Gagal menyimpan data: ', $validated);
-                return redirect()->back()->with('error', 'Gagal menyimpan data.');
-            }
+    return back()->with('success', 'Formulir berhasil dikirim!');
 }
     }
 

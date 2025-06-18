@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Daftar Akun</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('CSS/admin/admin-login.css') }}">
+    <link rel="stylesheet" href="{{ asset('CSS/admin-css/admin-login.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
@@ -28,6 +28,18 @@
                     </ul>
                 </div>
             @endif
+
+            @if (session('warning'))
+    <div class="alert alert-warning">
+        {{ session('warning') }}
+    </div>
+@endif
+
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 
             <form action="{{ route('register') }}" method="POST">
                 @csrf

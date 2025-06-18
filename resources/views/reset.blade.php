@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <title>Reset Sandi</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="{{ asset('CSS/admin/admin-reset.css') }}">
+=======
+    <link rel="stylesheet" href="{{ asset('CSS/admin-css/admin-reset.css') }}">
+>>>>>>> b46bec25cce7620f4446f5eb8b7ac81d8670dc75
 </head>
 <body>
     <div class="left-form">
@@ -40,4 +44,8 @@
         <img src="{{ asset('images/admin/sekolah-login.jpg') }}" alt="Foto Sekolah">
     </div>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> b46bec25cce7620f4446f5eb8b7ac81d8670dc75

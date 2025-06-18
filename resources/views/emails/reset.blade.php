@@ -21,4 +21,8 @@
 
     <p>Terima kasih,<br>Tim Website Anda</p>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> b46bec25cce7620f4446f5eb8b7ac81d8670dc75
