@@ -1,0 +1,166 @@
+.program-section-home {
+    background: linear-gradient(to bottom, #0a846b, #0a846b, #076653);
+    padding: 50px 5vw 150px;
+    text-align: center;
+}
+
+.program-title-home {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    color: #fff;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.program-wrapper-home {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.program-card-home {
+    width: 100%;
+    max-width: 400px;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    background-color: #222;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.program-card-home:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+.program-shape-home {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Gambar awal gelap */
+.program-shape-home img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.2);
+    transition: filter 0.4s ease, transform 0.4s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Hover aktifkan gambar */
+.program-card-home:hover img {
+    filter: brightness(1);
+    transform: scale(1.05);
+}
+
+/* Teks overlay */
+.program-shape-home h3,
+.program-shape-home p {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    padding: 0 10px;
+    transition: opacity 0.4s ease, color 0.4s ease;
+}
+
+/* Sembunyikan teks saat hover */
+.program-card-home:hover .program-shape-home h3,
+.program-card-home:hover .program-shape-home p {
+    opacity: 0;
+}
+
+.program-shape-home h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 120px;
+}
+
+.program-shape-home p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Layer gelap di bawah teks */
+.program-shape-home::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    transition: background 0.4s ease;
+}
+
+.program-card-home:hover .program-shape-home::before {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.btn-program-home {
+    margin-top: 40px;
+    background-color: #5d3c00;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn-program-home:hover {
+    background-color: #3e2800;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+    .program-wrapper-home {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .program-title-home {
+        font-size: 2.2rem;
+    }
+
+    .program-card-home {
+        height: 320px;
+    }
+
+    .program-shape-home h3 {
+        font-size: 1.4rem;
+        padding-top: 100px;
+    }
+
+    .program-shape-home p {
+        font-size: 1rem;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .program-card-home {
+        height: 300px;
+    }
+
+    .program-shape-home h3 {
+        padding-top: 80px;
+        font-size: 1.3rem;
+    }
+
+    .program-shape-home p {
+        font-size: 0.95rem;
+    }
+}

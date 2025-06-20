@@ -183,4 +183,176 @@
 .btn-program12:hover {
     background-color: #3e2800;
 }
+.program {
+    display: grid !important;
+    grid-template-columns: repeat(3, 400px) !important;
+    gap: 20px !important;
+    justify-content: center !important; /* Supaya grid berada di tengah container */
+    padding: 20px !important;
+}
+
+
+
+/* Program Card Styles */
+.program-card {
+    width: 400px !important;
+    height: 350px !important; 
+    border-radius: 15px !important;
+    overflow: hidden !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    cursor: pointer !important;
+    position: relative !important;
+} 
+
+
+.program-card:hover {
+    transform: scale(1.03);
+}
+
+.program-shape img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.program-shape h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #d9d9d9;
+    text-align: center;
+}
+
+.program-shape p {
+    font-size: 1.2rem;
+    color: #d9d9d9;
+    text-align: center;
+}
+
+.hover-img {
+    transition: transform 0.3s ease;
+}
+
+
+
+.hover-img:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+/* kegiatan */
+
+.kegiatan-item {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+.kegiatan-overlay-container {
+    position: relative;
+    width: 300px;
+    height: auto;
+}
+
+.kegiatan-overlay-container img {
+    width: 100%;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.kegiatan-overlay-container:hover img {
+    transform: scale(1.05);
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0 0 12px 12px;
+}
+
+.kegiatan-overlay-container:hover .overlay-text {
+    opacity: 1;
+}
+
+.popup-img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.popup-img:hover {
+    transform: scale(1.03);
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero1 {
+        padding: 60px 5% 60px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text1 {
+        max-width: 100%;
+    }
+
+    .paud {
+        font-size: 3.5rem;
+    }
+
+    .pauddd, .paudd1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text1 p {
+        font-size: 1.2rem;
+    }
+}
+
+
+#modalGambar {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+}
+
+
+@media (max-width: 1200px) {
+    .program {
+        grid-template-columns: repeat(3, 400px);
+        justify-content: center;
+    }
+}
+
+@media (max-width: 800px) {
+    .program {
+        grid-template-columns: repeat(2, 400px);
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .program {
+        grid-template-columns: 1fr;
+    }
+
+    .program-card {
+        width: 100%; /* biar card penuh di mobile */
+    }
+}
 

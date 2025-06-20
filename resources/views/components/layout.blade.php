@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('CSS/pop-up.css') }}">
     <link rel="stylesheet" href="{{ asset('CSS/about-blade.css') }}">
     <link rel="stylesheet" href="{{ asset('CSS/kegiatan-blade.css') }}">
+    <link rel="stylesheet" href="{{ asset('CSS/popup-wa.css') }}">
     
     {{-- Stack CSS tambahan jika ada --}}
     @stack('styles')
@@ -44,6 +45,72 @@
 
     {{-- Stack Script Tambahan --}}
     @stack('scripts')
+
+
+    <!-- Floating Chat Button -->
+<div id="floating-popup" onclick="togglePopup()">
+    <img src="{{ asset('images/chat-icon.png') }}" alt="Chat" class="popup-icon">
+</div>
+
+<div class="floating-social">
+    <!-- Instagram -->
+    <div class="floating-btn instagram" onclick="togglePopup('instagram')">
+        <img src="{{ asset('images/Instagram-.png') }}" alt="Instagram">
+    </div>
+
+    <!-- WhatsApp -->
+    <div class="floating-btn whatsapp" onclick="togglePopup('whatsapp')">
+        <img src="{{ asset('images/WhatsApp-.png') }}" alt="WhatsApp">
+    </div>
+</div>
+
+<!-- Popup -->
+<div id="popup-instagram" class="social-popup">
+    <div class="popup-box">
+        <p>Yuk, kunjungi Instagram kami!</p>
+        <a href="https://www.instagram.com/imamhzf" target="_blank">Buka Instagram</a>
+        <button onclick="closePopup('instagram')">Tutup</button>
+    </div>
+</div>
+
+<div id="popup-whatsapp" class="social-popup">
+    <div class="popup-box">
+        <p>Hai! Hubungi kami lewat WhatsApp</p>
+        <a href="https://wa.me/6285342614904" target="_blank">Buka WhatsApp</a>
+        <button onclick="closePopup('whatsapp')">Tutup</button>
+    </div>
+</div>
+
+
+
+
+<script>
+    function togglePopup(type) {
+        const popup = document.getElementById('popup-' + type);
+        // Sembunyikan popup lain
+        document.querySelectorAll('.social-popup').forEach(p => {
+            if (p !== popup) p.style.display = 'none';
+        });
+
+        // Toggle popup saat ini
+        popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function closePopup(type) {
+        document.getElementById('popup-' + type).style.display = 'none';
+    }
+
+    // Tutup popup jika klik di luar
+    window.addEventListener('click', function (e) {
+        document.querySelectorAll('.social-popup').forEach(popup => {
+            if (!popup.contains(e.target) && !e.target.closest('.floating-btn')) {
+                popup.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+
 
 </body>
 </html>

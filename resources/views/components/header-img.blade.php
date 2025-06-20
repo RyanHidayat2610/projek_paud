@@ -8,12 +8,12 @@
     <div class="slider-wrapper" id="slider">
         <div class="slide-overlay"></div>
         <div class="slider-container" id="sliderContainer">
-            @for ($i = 1; $i <= 6; $i++)
+            @foreach ($sliders as $slider)
                 <div class="slide">
-                    <img src="{{ asset("images/bg$i.jpg") }}" class="bg-img3" alt="Slide {{ $i }}">
+                    <img src="{{ asset('storage/slider/' . $slider->gambar) }}" class="bg-img3" alt="Slide">
                 </div>
-            @endfor
-        </div>
+            @endforeach
+    </div>
 
         <div class="kami">
             <div class="hero-text5">

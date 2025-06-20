@@ -7,7 +7,7 @@
 @endpush
 
 <div class="admin-pendaftar-container">
-    <h1 class="admin-title">Data Pemdaftar Anak</h1>
+    <h1 class="admin-title">Data Pendaftar Anak</h1>
 
     @if (session('success'))
         <div class="flash-message">
@@ -29,6 +29,9 @@
                     <th>Nama Ayah</th>
                     <th>Nama Ibu</th>
                     <th>Jarak Rumah</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>No HP</th>
                     <th>Foto Akte</th>
                     <th>Foto KK</th>
                     <th>Status</th>
@@ -48,6 +51,9 @@
                     <td>{{ $anak->nama_ayah }}</td>
                     <td>{{ $anak->nama_ibu }}</td>
                     <td>{{ $anak->jarak_rumah }}</td>
+                    <td>{{ $anak->username }}</td>
+                    <td>{{ $anak->email }}</td>
+                    <td>{{ $anak->no_hp }}</td>
                     <td>
                         @if ($anak->foto_akte)
                             <div class="file-info">
@@ -69,30 +75,40 @@
                         @endif
                     </td>
                     <td>
-                        @if($anak->status == 'diterima')
+                        @if($anak->status == 'Di Terima')
                             <span class="status-diterima">Diterima</span>
-                        @elseif($anak->status == 'ditolak')
+                        @elseif($anak->status == 'Belum Memenuhi Kuota')
                             <span class="status-ditolak">Ditolak</span>
                         @else
-                            <span class="status-diproses">Diproses</span>
+                            <span class="status-diproses">Menunggu Hasil</span>
                         @endif
                     </td>
                     <td class="action-buttons">
-                        @if($anak->status == 'diproses')
-                            <form action="{{ route('anak.updateStatus', $anak->id) }}" method="POST">
-                                @csrf @method('PATCH')
-                                <input type="hidden" name="status" value="diterima">
+                        @if($anak->status == 'Menunggu Hasil')
+                            <form action="{{ route('anak.updateStatus', $anak->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('PATCH')
+                                <input type="hidden" name="status" value="Di Terima">
                                 <button type="submit" class="btn-terima">Terima</button>
                             </form>
-                            <form action="{{ route('anak.updateStatus', $anak->id) }}" method="POST">
-                                @csrf @method('PATCH')
-                                <input type="hidden" name="status" value="ditolak">
+                            <form action="{{ route('anak.updateStatus', $anak->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('PATCH')
+                                <input type="hidden" name="status" value="Belum Memenuhi Kuota">
                                 <button type="submit" class="btn-tolak">Tolak</button>
                             </form>
                         @else
                             <em>Tindakan selesai</em>
                         @endif
+
+                        {{-- Tombol Hapus selalu ditampilkan --}}
+                        <form action="{{ route('anak.destroy', $anak->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn-hapus">Hapus</button>
+                        </form>
                     </td>
+
                 </tr>
                 @endforeach
             </tbody>
@@ -141,10 +157,6 @@
     function closePreview() {
         document.getElementById('previewModal').classList.remove('show');
         document.getElementById('fileContainer').innerHTML = '';
-        document.getElementById('previewModal').addEventListener('click', function(e) {
-    if (e.target === this) closePreview();
-});
-
     }
 </script>
 @endpush

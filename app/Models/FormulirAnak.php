@@ -10,7 +10,9 @@ class FormulirAnak extends Model
 
     protected $fillable = [
         'nama', 'tempat_lahir', 'tanggal_lahir', 'gender', 'agama', 'hobi',
-        'nama_ayah', 'nama_ibu', 'jarak_rumah', 'foto_akte', 'foto_kk', 'status'
+        'nama_ayah', 'nama_ibu', 'jarak_rumah', 'foto_akte', 'foto_kk',
+        'user_id', 'username', 'email', 'no_hp', 'status'
     ];
+
 }
 

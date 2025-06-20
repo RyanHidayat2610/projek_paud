@@ -3,6 +3,16 @@
 @section('content')
 <link rel="stylesheet" href="{{ asset('CSS/pendaftaran-blade.css') }}">
 <link rel="stylesheet" href="{{ asset('CSS/kegiatan-blade.css') }}">
+
+
+<!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
             <section class="hero1">
                 <div class="overlay1"></div>
                 <div class="hero-text1">
@@ -16,12 +26,13 @@
        
             <!-- Hero Section -->
             <section class="hero123">
-                <div class="overlay1"></div>
-                <div class="hero-text123">
+                <div class="overlay1"data-aos="fade-up"></div>
+                <div class="hero-text123" >
                     <h3 >PAUD AL ATHIRAH</h3>
                     <h1 >Tempat anak belajar dan bertumbuh </h1>
                     <p >Segera daftarkan anak Anda! </p>
-                    <a href="/formulir" class="btn-daftar1">Daftar</a>
+                    @php $userLoggedIn = session('user_id'); @endphp
+                    <a href="{{ $userLoggedIn ? '/formulir' : '/login' }}" class="btn-daftar1">Daftar</a>
                 </div>
             </section>
 

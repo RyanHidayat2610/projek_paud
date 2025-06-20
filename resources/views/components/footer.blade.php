@@ -1,7 +1,17 @@
 <link rel="stylesheet" href="{{ asset('CSS/footer.css') }}">
 
+@section('content')
+<link rel="stylesheet" href="{{ asset('CSS/kegiatan-blade.css') }}">
+<!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
 <section class="lokasi">
-       <div class="lokasi-container">
+       <div class="lokasi-container"data-aos="fade-up">
         <div class="lokasi-map">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2341960447486!2d106.7334205!3d-6.2351344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1d59340cfa7%3A0xc2f0c11c20b11cf5!2sJihan%20DayCare!5e0!3m2!1sen!2sid!4v1688558559684!5m2!1sen!2sid"
@@ -24,7 +34,7 @@
 <div class="footer">
     <div class="footer-wave"></div>
 
-    <div class="footer-container">
+    <div class="footer-container"data-aos="fade-up">
         <div class="footer-column">
         <h3>PAUD AL ATHIRAH</h3>
         <p>Didesain dan dikembangkan oleh tim mabar dari Institut Teknologi BJ Habibie dan bekerja sama dengan pihak PAUD AL ATHIRAH.</p>
@@ -59,7 +69,7 @@
     </div>
 </div>
 <footer class="footer-text">
-    <h3>DI BUAT OLEH TIM MABAR</h3>
+    <h3>Copyright © 2025 Intitut Teknolgi Bacharuddin Jusuf Habibie. All right reserved</h3>
     {{-- resources/views/components/modal-gambar.blade.php --}}
 <div id="modalGambar" class="modal-gambar">
     <span class="tutup" onclick="tutupModal()">&times;</span>

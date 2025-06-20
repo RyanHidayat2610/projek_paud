@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\KegiatanAbout;
 use Illuminate\Http\Request;
 use App\Models\Guru;
 use Illuminate\Support\Facades\Storage;
@@ -76,6 +77,8 @@ class GuruController extends Controller
     public function showToUser()
     {
         $gurus = Guru::all();
-        return view('about', compact('gurus'));
+        $kegiatan_about = KegiatanAbout::all();
+
+        return view('about', compact('gurus', 'kegiatan_about'));
     }
 }

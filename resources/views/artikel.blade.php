@@ -3,6 +3,14 @@
 @section('content')
 <link rel="stylesheet" href="{{ asset('CSS/artikel-blade.css') }}">
 <link rel="stylesheet" href="{{ asset('CSS/kegiatan-blade.css') }}">
+
+<!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
             
             <section class="hero1">
                 <div class="overlay1"></div>
@@ -19,7 +27,7 @@
     <h2 class="artikel1">Artikel Edukasi</h2>
     <div class="artikel-container">
         @foreach ($artikels as $index => $artikel)
-        <div class="artikel-wrapper">
+        <div class="artikel-wrapper"data-aos="fade-up">
             <div class="artikel-item">
                 @if ($artikel->gambar1)
                 <div class="artikel-images">

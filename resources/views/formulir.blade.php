@@ -4,8 +4,14 @@
 <link rel="stylesheet" href="{{ asset('CSS/formulir-blade.css') }}">
 
 
-
-<div class="form-container1">
+<!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<div class="form-container1"data-aos="fade-up">
 
     <!-- Tabel Persyaratan -->
     <table class="persyaratan-table">

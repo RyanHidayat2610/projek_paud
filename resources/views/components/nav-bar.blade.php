@@ -21,8 +21,21 @@
                 <li><a class="ikan" href="{{ url('/pendaftaran') }}">Pendaftaran</a></li>
                 <li><a class="ikan" href="{{ url('/about') }}">Tentang Kami</a></li>
                 <li><a class="ikan" href="{{ url('/artikel') }}">Artikel</a></li>
-                <li class="masuk"><a href="{{ url('/login') }}">MASUK</a></li>
-                <li class="daftar"><a href="{{ url('/register') }}">DAFTAR</a></li>
+                @php
+                    $userLoggedIn = session('user_id');
+                @endphp
+
+                @if (!$userLoggedIn)
+                    <li class="masuk"><a href="{{ url('/login') }}">MASUK</a></li>
+                    <li class="daftar"><a href="{{ url('/register') }}">DAFTAR</a></li>
+                @else
+                    <li><a class="ikan" href="{{ url('/dashboard') }}">Dashboard</a></li>
+                    <li class="username-nav">👤 {{ session('username') }}</li>
+                    <li class="logout">
+                        <a href="#" onclick="confirmLogout(event)">LOGOUT</a>
+                        <form id="logout-form" action="{{ url('/logout') }}" method="GET" style="display: none;"></form>
+                    </li>
+                @endif
             </ul>
         </nav>
     </div>
@@ -69,4 +82,14 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('navLinks').classList.toggle('active');
     }
 </script>
+
+<script>
+    function confirmLogout(event) {
+        event.preventDefault();
+        if (confirm('Apakah Anda yakin ingin logout?')) {
+            document.getElementById('logout-form').submit();
+        }
+    }
+</script>
+
 @endpush

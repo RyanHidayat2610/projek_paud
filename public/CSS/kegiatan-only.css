@@ -1,0 +1,118 @@
+.kegiatan-section {
+    background: linear-gradient(to bottom, #076653, #0c342c, #0c342c );
+    text-align: center;
+    padding: 150px 5vw;
+}
+
+/* Buat grid 3 kolom */
+.kegiatan-section {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.kegiatan-section > .kegiatan-item {
+    display: flex;
+    justify-content: center;
+}
+
+.kegiatan-title {
+    grid-column: 1 / -1;
+    font-size: 10rm !important;
+    margin-bottom: 40px;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+}
+
+/* Atur wrapper grid kegiatan */
+.kegiatan-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+
+.kegiatan-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.kegiatan-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.kegiatan-overlay-container {
+    position: relative;
+    width: 300px !important;
+    height: 450px !important;
+    overflow: hidden;
+    border-radius: 20px; /* border bulat di container */
+    display: flex;
+    flex-direction: column;
+    background-color: #000; /* fallback jika gambar gagal */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.kegiatan-overlay-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    /* HAPUS border-radius di sini */
+    border-radius: 0;
+}
+
+
+
+.kegiatan-overlay-container:hover img {
+    transform: scale(1.05);
+}
+
+.kegiatan-overlay-text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0 0 12px 12px;
+}
+
+.kegiatan-overlay-container:hover .kegiatan-overlay-text {
+    opacity: 1;
+}
+
+.kegiatan-popup-img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.kegiatan-popup-img:hover {
+    transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .kegiatan-section {
+        padding: 100px 10px;
+    }
+
+    .kegiatan-title {
+        font-size: 2rm;
+    }
+
+    .kegiatan-overlay-container {
+        width: 90%;
+        margin: auto;
+    }
+}

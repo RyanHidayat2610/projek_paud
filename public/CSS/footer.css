@@ -61,11 +61,11 @@
 
 .footer-text {
     text-align: center;
-    color: #fff;
+    color: #000000;
     padding: 20px 0;
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 10px;
-    background-color: #265728;
+    background-color: #ffffff;
 }
 
 .footer-container {
